@@ -78,5 +78,6 @@
     ./../../modules/home-manager/kitty.nix
     ./../../modules/home-manager/zsh/default.nix
     ./../../modules/home-manager/git.nix
+    ./../../modules/home-manager/rofi.nix
   ];
 }

@@ -1,12 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  # Import each part of the Zsh configuration
-  zshInit = import ./00-init.nix { inherit config pkgs; };
-  zshCustomization = import ./20-customization.nix { inherit config pkgs; };
-  zshAutostart = import ./30-autostart.nix { inherit config pkgs; };
-  
-in
 {
   # Enable Zsh shell
   programs.zsh = {
@@ -14,7 +7,12 @@ in
 		enableCompletion = true;
 		syntaxHighlighting.enable = true;
 		autosuggestion.enable = true;
-		# Oh My Zsh
+
+    history.size = 10000;
+    history.ignoreAllDups = true;
+    history.path = "$HOME/.zsh_history";
+    history.ignorePatterns = ["rm *" "pkill *" "cp *"];
+
     # Aliases
     shellAliases = {
       c = "clear";
@@ -56,18 +54,12 @@ in
         # Run fastfetch with the specified config
         fastfetch --config examples/13
       fi
+      export ZSH="${pkgs.zsh}/bin/zsh"
+      export ZSH_HIGHLIGHT_STYLES='bg=blue'
+      export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
     '';
   };
 
-  # Set Zsh as the default shell for the user
-  # users.users.mikke.shell = pkgs.zsh;
-
-  # Zsh Configuration Files
-  # home.file.".config/zshrc/00-init".text = zshInit;
-  # home.file.".config/zshrc/20-customization".text = zshCustomization;
-  home.file.".config/zshrc/30-autostart".text = zshAutostart;
-
-  # Optionally, set up the user environment
   home.sessionVariables = {
     SHELL = "${pkgs.zsh}/bin/zsh";
   };

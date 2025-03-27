@@ -108,8 +108,9 @@
     breeze-hacked-cursor-theme
     capitaine-cursors
     bibata-cursors
+    gtk4
   ];
-
+  
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   

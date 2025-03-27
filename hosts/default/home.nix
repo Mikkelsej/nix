@@ -80,6 +80,6 @@
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/rofi.nix
     ./../../modules/home-manager/desktopenv/waybar.nix
-    ./../../modules/home-manager/thunar.nix
+    ./../../modules/home-manager/nautlus.nix
   ];
 }

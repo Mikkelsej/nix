@@ -136,12 +136,10 @@
   eza # ls replacement
 
   nwg-dock-hyprland # Docker
-
+  xfce.thunar
   pipewire
   pavucontrol
   wireplumber
-
-  networkmanagerapplet # Network GUI
   ];
 
   # hyprland

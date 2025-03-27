@@ -1,37 +1,23 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs,  ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+      inputs.home-manager.nixosModules.default  # Import Home Manager module
     ];
 
-  # Bootloader.
+  # Bootloader setup
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.initrd.luks.devices."luks-dd50b3c2-cab3-475c-b3cd-f4e74f59aeeb".device = "/dev/disk/by-uuid/dd50b3c2-cab3-475c-b3cd-f4e74f59aeeb";
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = "nixos"; # Define hostname
+  networking.networkmanager.enable = true;  # Enable NetworkManager
 
-  # Enable networking
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
+  # Set the timezone and locale
   time.timeZone = "Europe/Copenhagen";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_DK.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
     LC_IDENTIFICATION = "da_DK.UTF-8";
@@ -44,16 +30,12 @@
     LC_TIME = "da_DK.UTF-8";
   };
 
-  
+  console.keyMap = "dk-latin1"; # Set keymap
 
-
-  # Configure console keymap
-  console.keyMap = "dk-latin1";
-
-  # Enable CUPS to print documents.
+  # Enable CUPS for printing
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Sound configuration with Pipewire
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -62,101 +44,82 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # User configuration for 'mikke'
   users.users.mikke = {
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "mikke";
     extraGroups = [ "networkmanager" "wheel" "input" "video" "audio" ];
     packages = with pkgs; [
-
+      # Add any user-specific packages here
     ];
   };
-  # Zsh
+
+  # Enable Zsh for user
   programs.zsh.enable = true;
-  
-  # Enable automatic login for the user.
+
+  # Enable automatic login
   services.getty.autologinUser = "mikke";
 
+  # Hyprland configuration (Wayland compositor)
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
 
-  services.gvfs.enable = true; 
+  services.gvfs.enable = true;  # Enable GVfs for Nautilus support
 
-  # Allow unfree packages
+  # Allow unfree packages (for example, proprietary drivers)
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # Installed system-wide packages
   environment.systemPackages = with pkgs; [
-  vim # Code Editor
-  vscode # Code Editor
-
-  kitty # Terminal
-
-  wget
-
-  git
-
-  firefox # Browser
-  
-  hyprland # Window managar
-  hypridle # Idle
-  hyprlock # Lockscreen
-  hyprpaper # Wallpaper
-  hyprpolkitagent # Polkit Authenticator
-
-  waybar # Statusbar
-  waypaper # Wallpaper
-   
-  nautilus # File Manager
-  nautilus-open-any-terminal
-  nemo # File Manager
-  yazi
-
-  swaynotificationcenter # Notification Daeomon
-  
-  rofi # App Menu and search
-
-  oh-my-posh
-
-  fastfetch
-
-  eza # ls replacement
-
-  nwg-dock-hyprland # Docker
-  xfce.thunar
-  pipewire
-  pavucontrol
-  wireplumber
+    vim
+    vscode
+    kitty
+    wget
+    git
+    firefox
+    hyprland
+    hypridle
+    hyprlock
+    hyprpaper
+    hyprpolkitagent
+    waybar
+    waypaper
+    nautilus
+    nautilus-open-any-terminal
+    nemo
+    yazi
+    swaynotificationcenter
+    rofi
+    oh-my-posh
+    fastfetch
+    eza
+    nwg-dock-hyprland
+    xfce.thunar
+    pipewire
+    pavucontrol
+    wireplumber
   ];
 
-  # hyprland
+  # Enable xdg portal for Wayland
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
+  # Enable Home Manager configuration for user 'mikke'
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "mikke" = import ./home.nix;
+      mikke = import ./home.nix;  # Import user-specific home manager config
     };
   };
 
+  # Automatic system upgrade and garbage collection
   system.autoUpgrade = {
     enable = true;
     dates = "weekly";
@@ -167,33 +130,12 @@
     dates = "daily";
     options = "--delete-older-than 10d";
   };
+
   nix.settings.auto-optimise-store = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
+  # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "24.11"; # Did you read the comment?
-
+  # Set state version (important for NixOS upgrades)
+  system.stateVersion = "24.11";  # Ensure you're using the correct state version
 }

@@ -103,6 +103,8 @@
     pywal
     brightnessctl # For brigtness keybinding
     pulseaudio # For Volume Keybinding
+    playerctl # For Volume Control
+    nerd-fonts.agave
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth

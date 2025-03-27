@@ -1,113 +1,162 @@
 { config, pkgs, ... }:
 
-# Import the custom colors from wal
-let
-  walColors = pkgs.runCommand "wal-colors" { } ''
-    cp ${config.home.file.".cache/wal/colors-waybar.css"} $out
-  '';
-in
-
-''
-  @import url('${walColors}/colors-waybar.css');
-
-  * {
+{
+    style = 
+        ''
+* {
     font-size: 15px;
     font-family: "CodeNewRoman Nerd Font Propo";
-  }
+}
 
-  window#waybar {
+window#waybar {
     all: unset;
-  }
+}
 
-  .modules-left {
-    padding: 7px;
-    margin: 10 0 5 10;
-    border-radius: 10px;
-    background: alpha(@background, .6);
+.modules-left {
+    padding:7px;
+    margin:10 0 5 10;
+    border-radius:10px;
+    background: alpha(#0A0B0F,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-  }
-
-  .modules-center {
-    padding: 7px;
-    margin: 10 0 5 0;
-    border-radius: 10px;
-    background: alpha(@background, .6);
+}
+.modules-center {
+    padding:7px;
+    margin:10 0 5 10;
+    border-radius:10px;
+    background: alpha(#0A0B0F,.6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-  }
-
-  .modules-right {
+}
+.modules-right {
     padding: 7px;
-    margin: 10 10 5 0;
+    margin: 10px 0 5px 10px;
     border-radius: 10px;
-    background: alpha(@background, .6);
+    background: alpha(#0A0B0F, .6);
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-  }
+}
 
-  tooltip {
-    background: @background;
-    color: @color7;
-  }
+tooltip {
+    background: #0A0B0F;
+    color: #e1cdbf;
+}
 
-  #clock:hover,
-  #custom-pacman:hover,
-  #custom-notification:hover,
-  #bluetooth:hover,
-  #network:hover,
-  #battery:hover,
-  #cpu:hover,
-  #memory:hover,
-  #temperature:hover {
+/* Default: Icons inherit background and color is neutral */
+#clock,
+#custom-pacman,
+#custom-notification,
+#bluetooth,
+#network,
+#battery,
+#cpu,
+#pulseaudio,
+#memory,
+#temperature {
+    color: white; /* Light color for icons */
+    background: inherit;  /* No background */
     transition: all .3s ease;
-    color: @color9;
-  }
+}
 
-  #battery {
+/* Hover effect: Show blue color when hovering */
+#custom-pacman:hover,
+#custom-notification:hover,
+#bluetooth:hover,
+#network:hover,
+#battery:hover,
+#cpu:hover,
+#pulseaudio:hover,
+#memory:hover,
+#temperature:hover {
+    color: #1E90FF;  /* Change to blue on hover */
+    background: white; /* Ensure background remains unchanged */
+}
+#clock:hover {
+    color: #1E90FF;
+}
+#battery {
     padding: 0px 5px;
-    transition: all .3s ease;
-    color: @color7;
-  }
+}
 
-  #battery.charging {
+#battery.charging {
     color: #26A65B;
-  }
+}
 
-  #battery.warning:not(.charging) {
+#battery.warning:not(.charging) {
     color: #ffbe61;
-  }
+}
 
-  #battery.critical:not(.charging) {
+#battery.critical:not(.charging) {
     color: #f53c3c;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-  }
+}
 
-  @keyframes blink {
+@keyframes blink {
     to { background-color: #ffffff; color: #000000; }
-  }
+}
 
-  #cpu,
-  #memory,
-  #temperature {
+#cpu,
+#memory,
+#temperature {
+    padding: 0px 5px;
+    color: rgba(255, 255, 255, 0.6); /* Light color */
+    transition: all .3s ease;
+}
+
+#tray {
     padding: 0px 5px;
     transition: all .3s ease;
-    color: @color7;
-  }
+}
 
-  #tray {
+#tray menu * {
     padding: 0px 5px;
     transition: all .3s ease;
-  }
+}
 
-  #tray menu * {
+#tray menu separator {
     padding: 0px 5px;
     transition: all .3s ease;
-  }
+}
 
-  #tray menu separator {
+#workspaces {
     padding: 0px 5px;
-    transition: all .3s ease;
-  }
-''
+}
+#workspaces button {
+    all:unset;
+    padding: 0px 5px;
+    color: rgba(30, 144, 255, 0.6);
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color: rgba(30, 144, 255, 0.6);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+    background: white;
+}
+#workspaces button.active {
+    color: #1E90FF;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: white;
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    color: rgba(30, 144, 255, 0.4);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+    background: white;
+}
+#workspaces button.empty.active {
+    color: #1E90FF;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+
+    '';
+}

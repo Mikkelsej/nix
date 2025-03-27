@@ -105,6 +105,9 @@
     pulseaudio # For Volume Keybinding
     playerctl # For Volume Control
     nerd-fonts.agave
+    breeze-hacked-cursor-theme
+    capitaine-cursors
+    bibata-cursors
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth

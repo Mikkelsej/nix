@@ -5,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
+      ./../../modules/nixos/nautilus.nix
     ];
 
   # Bootloader setup

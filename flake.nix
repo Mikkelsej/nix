@@ -19,8 +19,6 @@
         ./hosts/default/configuration.nix
         inputs.home-manager.nixosModules.default
       ];
-
-      home-manager.users.mikke = import ./home.nix;
     };
   };
 }

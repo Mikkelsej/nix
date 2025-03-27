@@ -68,7 +68,7 @@
         "format-ethernet" = "{ipaddr}/{cidr} 🌐";
         "format-linked" = "{ifname} (No IP) 🚫";
         "format-disconnected" = "Disconnected ⚠";
-        on-click = "nmtui";
+        on-click = "kitty --title 'Network Manager' -e nmtui";
       };
       "pulseaudio" = {
         format = "{volume}% 🔊 {format_source}";

@@ -22,7 +22,7 @@
   ];
 
   # Add support for HEIC image preview in Nautilus
-  environment.systemPackages = [
+    environment.systemPackages = [
     pkgs.libheif
     pkgs.libheif.out
   ];

@@ -5,7 +5,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
-      ./../../modules/nixos/nautilus.nix
     ];
 
   # Bootloader setup
@@ -70,8 +69,6 @@
     xwayland.enable = true;
   };
 
-  services.gvfs.enable = true;  # Enable GVfs for Nautilus support
-
   # Allow unfree packages (for example, proprietary drivers)
   nixpkgs.config.allowUnfree = true;
 
@@ -92,15 +89,12 @@
     waypaper
     nautilus
     nautilus-open-any-terminal
-    nemo
-    yazi
     swaynotificationcenter
     rofi
     oh-my-posh
     fastfetch
     eza
     nwg-dock-hyprland
-    xfce.thunar
     pipewire
     pavucontrol
     wireplumber

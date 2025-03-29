@@ -109,6 +109,10 @@
     capitaine-cursors
     bibata-cursors
     gtk4
+    pinta
+    grim
+    slurp
+    grimblast
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth

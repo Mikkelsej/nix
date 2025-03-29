@@ -46,5 +46,5 @@
     button:focus {
         box-shadow: none
     }
-    ''
+    '';
 }

@@ -62,6 +62,7 @@
     ./../../modules/home-manager/rofi.nix
     ./../../modules/home-manager/desktopenv/waybar/default.nix
     ./../../modules/home-manager/desktopenv/nwg-dock-hyprland.nix
+    ./../../modules/home-manager/desktopenv/hyprland/default.nix
     #./../../modules/home-manager/gtk.nix
     #./../../modules/nixos/nautilus.nix
   ];

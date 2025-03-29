@@ -2,7 +2,9 @@
 
 {
   home.file.".config/hypr/scripts/screenshot.sh".text = ''
-    prompt='Screenshot'
+#!/usr/bin/env bash
+
+prompt='Screenshot'
 mesg="DIR: ~/Screenshots"
 
 # Options

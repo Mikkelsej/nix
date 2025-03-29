@@ -29,6 +29,6 @@
 
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       update-flake = "sudo nixos-rebuild switch --flake ~/nixos/#nixos";
-      update-home = "home-managar switch --flake ~/nixos#mikke;
+      update-home = "home-manager switch --flake ~/nixos#mikke";
     };
 }

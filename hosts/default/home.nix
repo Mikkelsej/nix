@@ -74,13 +74,16 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  # Enable Docker
+  programs.nwg-dock-hyprland.enable = true;
+
   imports = [
     ./../../modules/home-manager/kitty.nix
     ./../../modules/home-manager/zsh/default.nix
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/rofi.nix
     ./../../modules/home-manager/desktopenv/waybar/default.nix
-    ./../../modules/home-manager/desktopenv/nwg-dock-hyprland/nwg-dock-hyprland.nix
+    ./../../modules/home-manager/desktopenv/nwg-dock-hyprland.nix
     #./../../modules/home-manager/gtk.nix
     #./../../modules/nixos/nautilus.nix
   ];

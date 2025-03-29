@@ -6,7 +6,7 @@ initExtra = ''
       if [[ "$(tty)" == "/dev/tty1" ]]; then
         exec Hyprland
       fi
-
+      source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
       # Check if terminal is a pseudo-terminal (pts)
       if [[ $(tty) == *"pts"* ]]; then
         # Run fastfetch with the specified config

@@ -22,11 +22,15 @@
   ];
 
   # Add support for HEIC image preview in Nautilus
-    environment.systemPackages = [
+  home.packages = [
     pkgs.libheif
     pkgs.libheif.out
   ];
-  
+
   # Link thumbnailers for preview support
-  environment.pathsToLink = [ "share/thumbnailers" ];
+  home.file = {
+    ".config/thumbnailers" = {
+      source = "/nix/store/..."; # Ensure to link thumbnailers path here if needed.
+    };
+  };
 }

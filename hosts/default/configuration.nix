@@ -57,6 +57,26 @@
     ];
   };
 
+
+
+  # Ensure GVfs is enabled for full functionality
+  services.gvfs.enable = true;
+
+  # Enable the necessary GStreamer plugins for audio/video properties
+  nixpkgs.overlays = [
+    (final: prev: {
+      nautilus = prev.nautilus.overrideAttrs (nprev: {
+        buildInputs = nprev.buildInputs ++ (with pkgs.gst_all_1; [
+          gst-plugins-good
+          gst-plugins-bad
+        ]);
+      });
+    })
+  ];
+
+  # Link thumbnailers for preview support
+  environment.pathsToLink = [ "share/thumbnailers" ];
+
   # Enable Zsh for user
   programs.zsh.enable = true;
 
@@ -113,6 +133,10 @@
     grim
     slurp
     grimblast
+    home-manager
+    # Add support for HEIC image preview in Nautilus
+    pkgs.libheif
+    pkgs.libheif.out
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -147,6 +171,8 @@
   };
 
   nix.settings.auto-optimise-store = true;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;

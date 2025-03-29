@@ -31,7 +31,7 @@ in {
           "commands": [
             { "label": "Terminal", "exec": "kitty", "icon": "utilities-terminal" },
             { "label": "Browser", "exec": "firefox", "icon": "firefox" },
-            { "label": "Files", "exec": "thunar", "icon": "system-file-manager" }
+            { "label": "Files", "exec": "nautilus", "icon": "system-file-manager" }
           ]
         }
       '';

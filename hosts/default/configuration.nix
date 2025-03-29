@@ -95,26 +95,15 @@
   # Installed system-wide packages
   environment.systemPackages = with pkgs; [
     vim
-    vscode
-    kitty
+    
+    
     wget
     git
     firefox
-    hyprland
-    hypridle
-    hyprlock
-    hyprpaper
-    hyprpolkitagent
-    waybar
-    waypaper
+    
     nautilus
     nautilus-open-any-terminal
-    swaynotificationcenter
-    rofi
-    oh-my-posh
-    fastfetch
-    eza
-    nwg-dock-hyprland
+    
     pipewire
     pavucontrol
     wireplumber
@@ -130,9 +119,7 @@
     bibata-cursors
     gtk4
     pinta
-    grim
-    slurp
-    grimblast
+
     home-manager
     # Add support for HEIC image preview in Nautilus
     pkgs.libheif

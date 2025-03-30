@@ -3,6 +3,7 @@
     imports = [
         ./../waybar/default.nix
         ./../fastfetch.nix
+        ./../pywal.nix
         ./conf/monitor.nix
         ./conf/windowrules.nix
         ./conf/defaultapplications.nix

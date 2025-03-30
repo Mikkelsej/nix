@@ -2,9 +2,8 @@
 
 let
   fastfetchConfig = ''
+  //  Thanks to Bina
   {
-    //  Thanks to Bina
-{
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
       "padding": {
@@ -106,7 +105,6 @@ let
       "break",
       "break",
   ]
-}
   }
   '';
 in {

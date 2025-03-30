@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 {
     imports = [
+        ./../waybar/default.nix
+        ./../fastfetch.nix
         ./conf/monitor.nix
         ./conf/windowrules.nix
         ./conf/defaultapplications.nix

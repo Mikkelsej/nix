@@ -69,7 +69,7 @@
     ./../../modules/home-manager/zsh/default.nix
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/rofi.nix
-    ./../../modules/home-manager/desktopenv/waybar/default.nix
+    #./../../modules/home-manager/desktopenv/waybar/default.nix
     ./../../modules/home-manager/desktopenv/nwg-dock-hyprland.nix
     ./../../modules/home-manager/desktopenv/hyprland/default.nix
     #./../../modules/home-manager/gtk.nix

@@ -5,6 +5,10 @@
         ./conf/windowrules.nix
         ./conf/defaultapplications.nix
         ./conf/decorations.nix
+        ./conf/autostart.nix
+        ./conf/animations.nix
+        ./conf/keybindings.nix
+        ./hyprpaper.nix
         ./scripts/startup.nix
         #./scripts/screenshot.nix
     ];

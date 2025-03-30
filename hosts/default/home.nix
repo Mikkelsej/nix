@@ -45,6 +45,15 @@
 
   };
 
+  fonts.fontconfig = {
+    enable = true;
+    defaultFonts = {
+      monospace = [ "JetBrains Mono" ];
+      sansSerif = [ "Noto Sans" ];
+      serif = [ "Noto Serif" ];
+    };
+  };
+
   home.sessionVariables = {
     EDTOR = "nvim";
     TERMINAL = "kitty";

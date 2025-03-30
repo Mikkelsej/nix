@@ -4,8 +4,8 @@
     style = 
         ''
 * {
-    font-size: 15px;
-    font-family: "CodeNewRoman Nerd Font Propo";
+    font-size: 16px;
+    font-family: "JetBrainsMono Nerd Font", "monospace";
 }
 
 window#waybar {

@@ -10,8 +10,6 @@
       ll = "eza -al --icons=always";
       lt = "eza -a --tree --level=1 --icons=always";
       shutdown = "systemctl poweroff";
-      v = "$EDITOR";
-      vim = "$EDITOR";
 
       wifi = "nmtui";
       logout = "hyprctl dispatch exit";

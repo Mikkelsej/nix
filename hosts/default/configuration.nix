@@ -131,6 +131,17 @@
   
   services.blueman.enable = true;
 
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    ];
+  };
+
+
   # Enable xdg portal for Wayland
   xdg.portal = {
     enable = true;
@@ -154,7 +165,7 @@
   nix.gc = {
     automatic = true;
     dates = "daily";
-    options = "--delete-older-than 10d";
+    options = "--delete-older-than 7d";
   };
 
   nix.settings.auto-optimise-store = true;

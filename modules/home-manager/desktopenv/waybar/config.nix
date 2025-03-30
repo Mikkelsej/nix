@@ -39,7 +39,7 @@
     };
     "custom/notification" = {
         "tooltip" = false;
-        "format" = "🔔";
+        "format" = " 󰂚 ";
         "on-click" = "swaync-client -t -sw";
         "escape" = true;
     };
@@ -48,27 +48,27 @@
         "format-alt" = "{:%d-%m-%Y}";
     };
     "network" = {
-        "format-wifi" = "🛜";
-        "format-ethernet" = "🔌";
-        "format-disconnected" = "❌";
+        "format-wifi" = " 󰖩 ";
+        "format-ethernet" = "  ";
+        "format-disconnected" = " 󰖪 ";
         "tooltip-format-disconnected" = "No connection";
-        "tooltip-format-wifi" = "{essid} ({signalStrength}%) 🛜";
-        "tooltip-format-ethernet" = "{ifname} 🌐";
+        "tooltip-format-wifi" = "{essid} ({signalStrength}%) 󰖩 ";
+        "tooltip-format-ethernet" = "{ifname}  ";
         "on-click" = "kitty --title 'Network Manager' -e nmtui";
     };
     "bluetooth" = {
-        "format-on" = "🎧";
-        "format-off" = "❌";
-        "format-disabled" = "🚫";
-        "format-connected-battery" = "{device_battery_percentage}% 🎧";
-        "format-alt" = "{device_alias} 🎧";
+        "format-on" = " 󰂯 ";
+        "format-off" = " 󰂲 ";
+        "format-disabled" = " 󰂲 ";
+        "format-connected-battery" = "{device_battery_percentage}% 󰂯 ";
+        "format-alt" = "{device_alias} 󰂯 ";
         "tooltip-format" = "{controller_alias} ({num_connections} connected)";
         "on-click" = "blueman-manager";
     };
     "pulseaudio" = {
-        format = "{volume}% 🔊 ";
-        "format-muted" = "🔇 ";
-        "format-source-muted" = "🔕";
+        format = "{volume}%   ";
+        "format-muted" = "   ";
+        "format-source-muted" = "  ";
         on-click = "pavucontrol";
       };
     "battery" = {
@@ -78,25 +78,25 @@
             "warning" = 30;
             "critical" = 20;
         };
-        "format" = "{capacity}% 🔋";
-        "format-charging" = "{capacity}% ⚡";
-        "format-plugged" = "{capacity}% ⚡🔌";
-        "format-alt" = "{time} 🔋";
+        "format" = "{capacity}% 󰁹 ";
+        "format-charging" = "{capacity}% 󰂄 ";
+        "format-plugged" = "{capacity}% 󰂄 ";
+        "format-alt" = "{time} 󰁹 ";
         "format-icons" = [
-            "🔋"
-            "🔋"
-            "🔋"
-            "🔋"
-            "🔋"
-            "🪫"
+            " 󰁹 "
+            " 󰂁 "
+            " 󰁿 "
+            " 󰁽 "
+            " 󰁻 "
+            " 󰂃 "
         ];
     };
     "custom/expand" = {
-        "format" = "⏷";
+        "format" = " ⏷ ";
         "tooltip" = false;
     };
     "custom/endpoint" = {
-        "format" = "|";
+        "format" = " | ";
         "tooltip" = false;
     };
     "group/expand" = {
@@ -116,19 +116,19 @@
         ];
     };
     "cpu" = {
-        "format" = "🖥️";
+        "format" = "  ";
         "tooltip" = true;
     };
     "memory" = {
-        "format" = "🧠";
+        "format" = " 󰍛 ";
     };
     "temperature" = {
         "critical-threshold" = 80;
-        "format" = "🌡️";
+        "format" = "  ";
     };
     "tray" = {
-        "icon-size" = 14;
-        "spacing" = 10;
+        "icon-size" = 16;
+        "spacing" = 12;
     };
   }];
 }

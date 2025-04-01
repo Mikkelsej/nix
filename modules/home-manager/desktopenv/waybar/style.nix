@@ -16,22 +16,16 @@ window#waybar {
     padding:7px;
     margin:10 0 5 10;
     border-radius:10px;
-    background: alpha(#0A0B0F,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    background: alpha(#0A0B0F,.0);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .0);
 }
-.modules-center {
-    padding:7px;
-    margin:10 0 5 10;
-    border-radius:10px;
-    background: alpha(#0A0B0F,.6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-}
+
 .modules-right {
     padding: 7px;
     margin: 10px 0 5px 10px;
     border-radius: 10px;
-    background: alpha(#0A0B0F, .6);
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+    background: alpha(#0A0B0F, .0);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .0);
 }
 
 tooltip {
@@ -41,7 +35,6 @@ tooltip {
 
 /* Default: Icons inherit background and color is neutral */
 #clock,
-#custom-pacman,
 #custom-notification,
 #bluetooth,
 #network,
@@ -51,12 +44,13 @@ tooltip {
 #memory,
 #temperature {
     color: white; /* Light color for icons */
-    background: inherit;  /* No background */
     transition: all .3s ease;
+    background: alpha(#0A0B0F, .6);
+    border-radius: 10px;
+    margin: 5px;
 }
 
 /* Hover effect: Show blue color when hovering */
-#custom-pacman:hover,
 #custom-notification:hover,
 #bluetooth:hover,
 #network:hover,
@@ -66,7 +60,6 @@ tooltip {
 #memory:hover,
 #temperature:hover {
     color: #1E90FF;  /* Change to blue on hover */
-    background: white; /* Ensure background remains unchanged */
 }
 #clock:hover {
     color: #1E90FF;
@@ -115,45 +108,46 @@ tooltip {
 }
 
 #tray menu separator {
-    padding: 0px 5px;
+    padding: 10px 5px;
     transition: all .3s ease;
 }
 
 #workspaces {
     padding: 0px 5px;
+    background: alpha(#0A0B0F, .6);
+    border-radius: 10px;
+    margin: 5px;
 }
 #workspaces button {
-    all:unset;
-    padding: 0px 5px;
-    color: rgba(30, 144, 255, 0.6);
-    transition: all .2s ease;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.6;
+    all: unset;
+    padding: 10px 15px; /* Increase size */
+    font-size: 18px; /* Match the clock’s font size */
 }
 #workspaces button:hover {
-    color: rgba(30, 144, 255, 0.6);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
-    background: white;
 }
 #workspaces button.active {
-    color: #1E90FF;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+    background: alpha(#1E90FF, 0.3);
+    border-radius:10px;
 }
 #workspaces button.empty {
-    color: white;
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
 }
 #workspaces button.empty:hover {
-    color: rgba(30, 144, 255, 0.4);
     border: none;
     text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
     transition: all 1s ease;
-    background: white;
 }
 #workspaces button.empty.active {
-    color: #1E90FF;
     border: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
 }

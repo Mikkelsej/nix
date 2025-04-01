@@ -11,15 +11,14 @@
         "custom/pacman"
         "tray"
     ];
-    "modules-center" = [
-        "clock"
-    ];
+
     "modules-right" = [
         "group/expand"
         "pulseaudio"
         "bluetooth"
         "network"
         "battery"
+        "clock"
         "custom/notification"
     ];
     "hyprland/workspaces" = {
@@ -44,15 +43,16 @@
         "escape" = true;
     };
     "clock" = {
+        "format" = " {:%H:%M} ";
         "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        "format-alt" = "{:%d-%m-%Y}";
+        "format-alt" = " {:%d-%m-%Y} ";
     };
     "network" = {
-        "format-wifi" = " 󰖩 ";
-        "format-ethernet" = "  ";
-        "format-disconnected" = " 󰖪 ";
+        "format-wifi" = " 󰖩  ";
+        "format-ethernet" = "   ";
+        "format-disconnected" = " 󰖪  ";
         "tooltip-format-disconnected" = "No connection";
-        "tooltip-format-wifi" = "{essid} ({signalStrength}%) 󰖩 ";
+        "tooltip-format-wifi" = " {essid} ({signalStrength}%) 󰖩  ";
         "tooltip-format-ethernet" = "{ifname}  ";
         "on-click" = "kitty --title 'Network Manager' -e nmtui";
     };
@@ -66,7 +66,7 @@
         "on-click" = "blueman-manager";
     };
     "pulseaudio" = {
-        format = "{volume}%   ";
+        format = " {volume}%   ";
         "format-muted" = "   ";
         "format-source-muted" = "  ";
         on-click = "pavucontrol";
@@ -78,10 +78,10 @@
             "warning" = 30;
             "critical" = 20;
         };
-        "format" = "{capacity}% 󰁹 ";
-        "format-charging" = "{capacity}% 󰂄 ";
-        "format-plugged" = "{capacity}% 󰂄 ";
-        "format-alt" = "{time} 󰁹 ";
+        "format" = " {capacity}% 󰁹 ";
+        "format-charging" = " {capacity}% 󰂄 ";
+        "format-plugged" = " {capacity}% 󰂄 ";
+        "format-alt" = " {time} 󰁹 ";
         "format-icons" = [
             " 󰁹 "
             " 󰂁 "
@@ -116,7 +116,7 @@
         ];
     };
     "cpu" = {
-        "format" = "  ";
+        "format" = "   ";
         "tooltip" = true;
     };
     "memory" = {

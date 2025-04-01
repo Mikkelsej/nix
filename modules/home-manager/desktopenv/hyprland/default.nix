@@ -15,4 +15,6 @@
         ./scripts/startup.nix
         #./scripts/screenshot.nix
     ];
+
+    pywal.enable = false;
 }

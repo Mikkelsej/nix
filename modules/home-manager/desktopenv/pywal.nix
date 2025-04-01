@@ -2,7 +2,7 @@
 
 let
   walCache = "${config.xdg.cacheHome}/wal";
-  wallpaper = "${config.home.homeDirectory}/Pictures/wallpaper.jpg";
+  wallpaper = "${config.home.homeDirectory}/Pictures/wallpaper.jpg";  # Use config.home.homeDirectory
 in
 {
   options = {
@@ -10,9 +10,9 @@ in
   };
 
   config = lib.mkIf config.pywal.enable {
-    home.packages = with pkgs; [ wal ];
+    home.packages = with pkgs; [ pywal ];
 
-    # Ensure colors are available system-wide
+    # Ensure Pywal color variables are loaded
     home.sessionVariables = {
       PYWAL_CACHE = "${walCache}/colors.sh";
     };
@@ -20,7 +20,7 @@ in
     # Generate and apply Pywal colors declaratively
     home.activation.pywal = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       if [ -f "${wallpaper}" ]; then
-        ${pkgs.wal}/bin/wal -i ${wallpaper} -q
+        ${pkgs.pywal}/bin/wal -i ${wallpaper} -q
       fi
     '';
 
@@ -28,6 +28,8 @@ in
     home.file = {
       "${walCache}/colors.sh".source = "${walCache}/colors.sh";
       "${walCache}/colors-kitty.conf".source = "${walCache}/colors-kitty.conf";
+      "${walCache}/colors-alacritty.yml".source = "${walCache}/colors-alacritty.yml";
+      "${walCache}/colors.json".source = "${walCache}/colors.json";
     };
 
     # Systemd service to reload colors at login
@@ -37,7 +39,7 @@ in
         After = [ "graphical-session.target" ];
       };
       Service = {
-        ExecStart = "${pkgs.wal}/bin/wal -R -q";
+        ExecStart = "${pkgs.pywal}/bin/wal -R -q";
         Restart = "always";
       };
       Install = { WantedBy = [ "default.target" ]; };

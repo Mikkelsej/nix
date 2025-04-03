@@ -14,6 +14,8 @@
       wifi = "nmtui";
       logout = "hyprctl dispatch exit";
 
+      #code = "code -n";
+
       gs = "git status";
       ga = "git add";
       gc = "git commit -m";

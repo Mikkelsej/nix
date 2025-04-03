@@ -53,7 +53,7 @@
         "format-disconnected" = " 󰖪  ";
         "tooltip-format-disconnected" = "No connection";
         "tooltip-format-wifi" = " {essid} ({signalStrength}%) 󰖩  ";
-        "tooltip-format-ethernet" = "{ifname}  ";
+        "tooltip-format-ethernet" = "{ifname}   ";
         "on-click" = "kitty --title 'Network Manager' -e nmtui";
     };
     "bluetooth" = {
@@ -68,7 +68,7 @@
     "pulseaudio" = {
         format = " {volume}%   ";
         "format-muted" = "   ";
-        "format-source-muted" = "  ";
+        "format-source-muted" = "   ";
         on-click = "pavucontrol";
       };
     "battery" = {

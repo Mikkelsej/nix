@@ -38,6 +38,12 @@
     kitty
     # Shell 
     zsh
+    
+    discord
+    spotify
+    obsidian
+
+    devenv
   ];
 
 

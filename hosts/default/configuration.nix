@@ -10,7 +10,7 @@
   # Bootloader setup
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-dd50b3c2-cab3-475c-b3cd-f4e74f59aeeb".device = "/dev/disk/by-uuid/dd50b3c2-cab3-475c-b3cd-f4e74f59aeeb";
+  boot.initrd.luks.devices."luks-24dfd462-9c09-43df-b732-ce695d5640b7".device = "/dev/disk/by-uuid/24dfd462-9c09-43df-b732-ce695d5640b7";
 
   networking.hostName = "nixos"; # Define hostname
   networking.networkmanager.enable = true;  # Enable NetworkManager

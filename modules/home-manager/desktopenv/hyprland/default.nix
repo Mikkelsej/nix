@@ -19,6 +19,9 @@
         ./conf/animations.nix
         ./conf/keybindings.nix
 
+        # hyprland
+        ./hyprland.conf
+
         # Scripts
         ./scripts/startup.nix
 

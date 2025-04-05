@@ -3,10 +3,13 @@
     imports = [
         # Statusbar
         ./../waybar/default.nix
+
         # Style
         ./../fastfetch.nix
+
         # Docker
         ./../nwg-dock-hyprland.nix
+
         # Configuration settings
         ./conf/monitor.nix
         ./conf/windowrules.nix
@@ -15,11 +18,14 @@
         ./conf/autostart.nix
         ./conf/animations.nix
         ./conf/keybindings.nix
+
         # Scripts
         ./scripts/startup.nix
+
         # Wallpaper
         ./hyprpaper.nix
         #./../pywal.nix
+
         # Application Launcher
         ./../rofi.nix
         
@@ -30,9 +36,9 @@
         ./../kitty.nix
 
         # Shell
-        ./../zsh/defualt.nix
+        ./../zsh/default.nix
+
         # Not implemented yet
         #./scripts/screenshot.nix
     ];
-
 }

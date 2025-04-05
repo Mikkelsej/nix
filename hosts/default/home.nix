@@ -71,7 +71,7 @@
   programs.nwg-dock-hyprland.enable = true;
 
   imports = [
-    ./../../modules/home-manager/python.nix
+    ./../../modules/home-manager/programming_languages/default.nix
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/desktopenv/hyprland/default.nix
     #./../../modules/home-manager/gtk.nix

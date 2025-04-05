@@ -1,9 +1,13 @@
 { config, pkgs, ... }:
 {
     imports = [
+        # Statusbar
         ./../waybar/default.nix
+        # Style
         ./../fastfetch.nix
-        ./../pywal.nix
+        # Docker
+        ./../nwg-dock-hyprland.nix
+        # Configuration settings
         ./conf/monitor.nix
         ./conf/windowrules.nix
         ./conf/defaultapplications.nix
@@ -11,12 +15,24 @@
         ./conf/autostart.nix
         ./conf/animations.nix
         ./conf/keybindings.nix
-        ./hyprpaper.nix
+        # Scripts
         ./scripts/startup.nix
+        # Wallpaper
+        ./hyprpaper.nix
+        #./../pywal.nix
+        # Application Launcher
         ./../rofi.nix
-        ./../nautilus.nix
+        
+        # File manager
+        #./../nautilus.nix
+
+        # Terminal
+        ./../kitty.nix
+
+        # Shell
+        ./../zsh/defualt.nix
+        # Not implemented yet
         #./scripts/screenshot.nix
     ];
 
-    pywal.enable = false;
 }

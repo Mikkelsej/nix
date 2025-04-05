@@ -8,7 +8,7 @@
 exec-once = ~/.config/nwg-dock-hyprland/launch.sh
 
 # Autostart Notification Daemon
-exec-once = sway-notification-center
+exec-once = swaync
 
 # Autostart Wallpaper
 exec-once = hyprpaper

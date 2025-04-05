@@ -20,7 +20,7 @@
         ./conf/keybindings.nix
 
         # hyprland
-        ./hyprland.conf
+        ./hyprland.nix
 
         # Scripts
         ./scripts/startup.nix

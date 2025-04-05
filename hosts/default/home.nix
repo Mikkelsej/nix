@@ -43,11 +43,7 @@
     spotify
     obsidian
 
-    (python3.withPackages (python-pkgs: with python-pkgs; [
-      pycryptodome
-      numpy
-      requests
-    ]))  
+    
   ];
 
 
@@ -79,11 +75,9 @@
     ./../../modules/home-manager/kitty.nix
     ./../../modules/home-manager/zsh/default.nix
     ./../../modules/home-manager/git.nix
-    ./../../modules/home-manager/rofi.nix
     #./../../modules/home-manager/desktopenv/waybar/default.nix
     ./../../modules/home-manager/desktopenv/nwg-dock-hyprland.nix
     ./../../modules/home-manager/desktopenv/hyprland/default.nix
     #./../../modules/home-manager/gtk.nix
-    #./../../modules/nixos/nautilus.nix
   ];
 }

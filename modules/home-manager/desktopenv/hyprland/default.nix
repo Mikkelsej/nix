@@ -13,6 +13,8 @@
         ./conf/keybindings.nix
         ./hyprpaper.nix
         ./scripts/startup.nix
+        ./../rofi.nix
+        ./../nautilus.nix
         #./scripts/screenshot.nix
     ];
 

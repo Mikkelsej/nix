@@ -29,6 +29,9 @@
         ./hyprpaper.nix
         #./../pywal.nix
 
+        # theme
+        ./../catppuccin.nix
+
         # Application Launcher
         ./../rofi.nix
         

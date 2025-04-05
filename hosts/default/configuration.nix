@@ -123,10 +123,9 @@
     home-manager
     # Add support for HEIC image preview in Nautilus
     pkgs.libheif
-    pkgs.libheif.out
+    pkgs.libheif.out   
 
-    # Python
-    
+    catppuccin
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -134,6 +133,8 @@
   
   services.blueman.enable = true;
 
+  
+  
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -144,6 +145,7 @@
     ];
   };
 
+  
 
   # Enable xdg portal for Wayland
   xdg.portal = {
@@ -157,6 +159,7 @@
     users = {
       mikke = import ./home.nix;  # Import user-specific home manager config
     };
+    backupFileExtension = "backup";
   };
 
   # Automatic system upgrade and garbage collection

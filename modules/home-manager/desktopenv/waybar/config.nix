@@ -60,9 +60,9 @@
         "format-on" = " 󰂯 ";
         "format-off" = " 󰂲 ";
         "format-disabled" = " 󰂲 ";
-        "format-connected-battery" = " {device_battery_percentage}% 󰂯 ";
+        "format-connected-battery" = " {num_connections} 󰂯 ";
         "format-alt" = " 󰂯 ";
-        "tooltip-format" = "{controller_alias} ({num_connections} connected)";
+        "tooltip-format" = "{controller_alias} ({device_battery_percentage}%) ";
         "on-click" = "blueman-manager";
     };
     "pulseaudio" = {

@@ -43,7 +43,7 @@
     spotify
     obsidian
 
-    
+    catppuccin
   ];
 
 
@@ -69,6 +69,12 @@
 
   # Enable Docker
   programs.nwg-dock-hyprland.enable = true;
+
+  #catppuccin = {
+  #  enable = true;
+  #  flavor = "mocha";
+  #};
+  
 
   imports = [
     ./../../modules/home-manager/programming_languages/default.nix

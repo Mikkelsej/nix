@@ -23,7 +23,7 @@ in {
           "alignment": "center",
           "exclusive": true,
           "margin": 10,
-          "icon_size": 48,
+          "icon_size": 40,
           "background": "rgba(40, 40, 40, 0.8)",
           "border_radius": 10,
           "monitor": "",

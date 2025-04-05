@@ -43,7 +43,11 @@
     spotify
     obsidian
 
-    devenv
+    (python3.withPackages (python-pkgs: with python-pkgs; [
+      pycryptodome
+      numpy
+      requests
+    ]))  
   ];
 
 
@@ -71,6 +75,7 @@
   programs.nwg-dock-hyprland.enable = true;
 
   imports = [
+    ./../../modules/home-manager/python.nix
     ./../../modules/home-manager/kitty.nix
     ./../../modules/home-manager/zsh/default.nix
     ./../../modules/home-manager/git.nix

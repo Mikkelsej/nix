@@ -48,11 +48,11 @@
         "format-alt" = " {:%d-%m-%Y} ";
     };
     "network" = {
-        "format-wifi" = " 󰖩  ";
+        "format-wifi" = "   ";
         "format-ethernet" = "   ";
         "format-disconnected" = " 󰖪  ";
         "tooltip-format-disconnected" = "No connection";
-        "tooltip-format-wifi" = " {essid} ({signalStrength}%) 󰖩  ";
+        "tooltip-format-wifi" = " {essid} ({signalStrength}%)   ";
         "tooltip-format-ethernet" = "{ifname}   ";
         "on-click" = "kitty --title 'Network Manager' -e nmtui";
     };
@@ -60,8 +60,8 @@
         "format-on" = " 󰂯 ";
         "format-off" = " 󰂲 ";
         "format-disabled" = " 󰂲 ";
-        "format-connected-battery" = "{device_battery_percentage}% 󰂯 ";
-        "format-alt" = "{device_alias} 󰂯 ";
+        "format-connected-battery" = " {device_battery_percentage}% 󰂯 ";
+        "format-alt" = " 󰂯 ";
         "tooltip-format" = "{controller_alias} ({num_connections} connected)";
         "on-click" = "blueman-manager";
     };

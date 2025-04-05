@@ -126,11 +126,7 @@
     pkgs.libheif.out
 
     # Python
-    (python3.withPackages (python-pkgs: with python-pkgs; [
-      pycryptodome
-      numpy
-      requests
-    ]))
+    
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth

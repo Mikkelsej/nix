@@ -8,8 +8,20 @@
     ];
 
   # Bootloader setup
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      useOSProber = true;
+      device = "nodev";
+      extraEntries = ''
+        menuentry "Rebbot into UEFI Firmware Settings" {
+          fwsetup
+        }
+      '';
+    };
+  };
   boot.initrd.luks.devices."luks-24dfd462-9c09-43df-b732-ce695d5640b7".device = "/dev/disk/by-uuid/24dfd462-9c09-43df-b732-ce695d5640b7";
 
   networking.hostName = "nixos"; # Define hostname
@@ -125,7 +137,6 @@
     pkgs.libheif
     pkgs.libheif.out   
 
-    catppuccin
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -177,6 +188,13 @@
   nix.settings.auto-optimise-store = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  stylix.enable = true;
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  stylix.image = ./../../wallpapers/sundown-over-sea.jpg;
+  stylix.polarity = "dark";
+
+
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;

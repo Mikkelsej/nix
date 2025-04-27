@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, catppuccin, ... }:
 
 {
   home.username = "mikke";
@@ -43,9 +43,14 @@
     spotify
     obsidian
 
-    catppuccin
+    gparted
   ];
 
+
+  stylix.targets = {
+    kitty.enable = false;
+    waybar.enable = false;
+  };
 
   home.file = {
 
@@ -70,10 +75,6 @@
   # Enable Docker
   programs.nwg-dock-hyprland.enable = true;
 
-  #catppuccin = {
-  #  enable = true;
-  #  flavor = "mocha";
-  #};
   
 
   imports = [

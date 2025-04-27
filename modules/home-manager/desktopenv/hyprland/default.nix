@@ -30,10 +30,9 @@
         #./../pywal.nix
 
         # theme
-        ./../catppuccin.nix
 
         # Application Launcher
-        ./../rofi.nix
+        #./../rofi.nix
         
         # File manager
         #./../nautilus.nix

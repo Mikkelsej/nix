@@ -131,6 +131,9 @@
     gtk4
     pinta
 
+    
+
+
     home-manager
     # Add support for HEIC image preview in Nautilus
     pkgs.libheif
@@ -192,9 +195,9 @@
 
   stylix = {
     enable = true;
-    base16Scheme = inputs.base16-schemes.nord;
-    imagme = ./../../wallpapers/sundown-over-sea.jpg;
+    image = ./../../wallpapers/sundown-over-sea.jpg;
     polarity = "dark";
+    
   };
 
 

@@ -72,6 +72,11 @@
   # Enable Docker
   programs.nwg-dock-hyprland.enable = true;
 
+  stylex.targets = {
+    waybar.enable = false;
+    kitty.enable = false;
+  };
+  
   
 
   imports = [

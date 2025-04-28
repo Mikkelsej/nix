@@ -4,17 +4,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
-    base16-schemes.url = "github:tinted-theming/base16-schemes";
     home-manager = {
-       url = "github:nix-community/home-manager";
-       inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; };
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/default/configuration.nix
           inputs.home-manager.nixosModules.default
@@ -22,7 +22,8 @@
         ];
       };
       galaxybook = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs; };
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/galaxybook/configuration.nix
           inputs.home-manager.nixosModules.default
@@ -30,13 +31,14 @@
         ];
       };
     };
+
     homeConfigurations = {
       mikke = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs; };
-        modules = [ 
-          ./hosts/default/home.nix      
-          ];
+        modules = [
+          ./hosts/default/home.nix
+        ];
       };
     };
   };

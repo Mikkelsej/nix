@@ -1,4 +1,4 @@
-{ config, pkgs, catppuccin, ... }:
+{ config, pkgs, stylix, ... }:
 
 {
   home.username = "mikke";
@@ -46,11 +46,8 @@
     gparted
   ];
 
-
-  stylix.targets = {
-    kitty.enable = false;
-    waybar.enable = false;
-  };
+  
+  
 
   home.file = {
 

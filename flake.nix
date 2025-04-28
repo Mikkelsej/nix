@@ -24,7 +24,7 @@
         specialArgs = {inherit inputs; };
         modules = [
           ./hosts/galaxybook/configuration.nix
-          inputs.home-manager.nixosModules.galaxybook
+          inputs.home-manager.nixosModules.default
           inputs.stylix.nixosModules.stylix
         ];
       };

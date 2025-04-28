@@ -1,4 +1,4 @@
-{ config, pkgs, stylix, ... }:
+{ config, pkgs, ... }:
 
 {
   home.username = "mikke";

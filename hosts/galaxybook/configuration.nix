@@ -5,7 +5,6 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
-      inputs.stylix.nixosModules.stylix
     ];
 
   # Bootloader setup
@@ -193,7 +192,7 @@
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
+    base16Scheme = inputs.base16-schemes.nord;
     imagme = ./../../wallpapers/sundown-over-sea.jpg;
     polarity = "dark";
   };

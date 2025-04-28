@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
+    base16-schemes.url = "github:tinted-theming/base16-schemes";
     home-manager = {
        url = "github:nix-community/home-manager";
        inputs.nixpkgs.follows = "nixpkgs";

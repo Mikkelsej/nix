@@ -16,7 +16,7 @@
       useOSProber = true;
       device = "nodev";
       extraEntries = ''
-        menuentry "Rebbot into UEFI Firmware Settings" {
+        menuentry "Reboot into UEFI Firmware Settings" {
           fwsetup
         }
       '';
@@ -144,21 +144,7 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
   
-  services.blueman.enable = true;
-
-  
-  
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    ];
-  };
-
-  
+  services.blueman.enable = true;  
 
   # Enable xdg portal for Wayland
   xdg.portal = {
@@ -178,7 +164,7 @@
   # Automatic system upgrade and garbage collection
   system.autoUpgrade = {
     enable = true;
-    dates = "weekly";
+    dates = "daily";
   };
   
 
@@ -197,9 +183,56 @@
     enable = true;
     image = ./../../wallpapers/sundown-over-sea.jpg;
     polarity = "dark";
-    
+    targets = {
+      
+    };
+    fonts = {
+      monospace = {
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
+      };
+
+      serif = {
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
+      };
+
+      sansSerif = {
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Emoji";
+      };
+    };
   };
 
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    ];
+  };
+
+
+  boot.consoleLogLevel = 0;  
+  boot.kernelParams = [ "quiet" "loglevel=0" ];  
+  boot.initrd.verbose = false;
+  boot.plymouth.enable = true;
+
+
+  services.xserver = {
+    enable = true;
+    displayManager.lightdm = {
+      enable = true;
+      greeters.enso.enable = true;
+    };
+  };
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;

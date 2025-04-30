@@ -44,6 +44,8 @@
     obsidian
 
     gparted
+
+    networkmanagerapplet
   ];
 
   
@@ -72,9 +74,10 @@
   # Enable Docker
   programs.nwg-dock-hyprland.enable = true;
 
-  stylex.targets = {
+  stylix.targets = {
     waybar.enable = false;
     kitty.enable = false;
+    rofi.enable = true;
   };
   
   

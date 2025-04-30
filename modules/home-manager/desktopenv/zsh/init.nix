@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-initExtra = ''
+initContent = ''
       # Check if we are on tty1, then start Hyprland
       if [[ "$(tty)" == "/dev/tty1" ]]; then
         exec Hyprland

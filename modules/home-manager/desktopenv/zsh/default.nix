@@ -3,7 +3,7 @@
 
 let
   zshAliases = import ./aliases.nix { inherit config pkgs; };
-  zshInitExtra = import ./init.nix { inherit config pkgs; };
+  zshInitContent = import ./init.nix { inherit config pkgs; };
 in
 
 {
@@ -21,7 +21,7 @@ in
 
     # Aliases
     shellAliases = zshAliases.shellAliases;
-    initExtra = zshInitExtra.initExtra;
+    initContent = zshInitContent.initContent;
   };
 
   home.sessionVariables = {

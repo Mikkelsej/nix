@@ -24,5 +24,7 @@ exec-once = ~/.config/hypr/scripts/startup.sh
 # Cursor
 exec-once = hyprctl setcursor Bibata-Modern-Ice 24
 
+# SwayOSD
+exec-once = swayosd-server
   '';
 }

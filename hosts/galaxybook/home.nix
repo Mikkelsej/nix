@@ -53,6 +53,9 @@
     libnotify
     swayosd
     
+
+    fittrackee
+    postgresql
   ];
 
   services.swayosd = {

@@ -62,7 +62,7 @@
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "mikke";
-    extraGroups = [ "networkmanager" "wheel" "input" "video" "audio" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "video" "audio" "docker" ];
     packages = with pkgs; [
       # Add any user-specific packages here
     ];
@@ -139,6 +139,8 @@
     pkgs.libheif
     pkgs.libheif.out   
 
+
+    gnumake
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -233,6 +235,43 @@
       greeters.enso.enable = true;
     };
   };
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "mikke";
+  };
+
+  # Enable docker
+  virtualisation.docker.enable = true;
+
+
+  virtualisation.oci-containers = {
+    containers = {
+      fittrackee = {
+        image = "samr1/fittrackee:latest";
+        ports = [ "5000:5000" ];
+        environment = {
+          UI_URL = "http://localhost:5000";
+          DATABASE_URL = "postgresql://fittrackee:password@db/fittrackee";
+        };
+      };
+
+      db = {
+        image = "postgres:15";
+        ports = [ "5432:5432" ];
+        environment = {
+          POSTGRES_DB = "fittrackee";
+          POSTGRES_USER = "fittrackee";
+          POSTGRES_PASSWORD = "password";
+        };
+      };
+
+      ui = {
+        image = "samr1/fittrackee-ui:latest";
+        ports = [ "3000:80" ];
+      };
+    };
+  };
+
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;

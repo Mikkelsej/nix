@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
-      ./../../modules/home-manager/desktopenv/stylix/default.nix
+      
     ];
 
   # Bootloader setup
@@ -24,6 +24,7 @@
       '';
       backgroundColor = lib.mkForce "#000000";
       default = "3";
+      theme = ./../../modules/nixos/grub-themes/Particle/theme.txt;
     };
   };
 

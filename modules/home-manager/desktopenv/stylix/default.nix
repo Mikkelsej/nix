@@ -2,24 +2,34 @@
 
 {
   imports = [
-    inputs.stylix.nixosModules.stylix
+    #inputs.stylix.nixosModules.stylix
   ];
 
   stylix = {
     enable = true;
+    image = ./../../../../wallpapers/sundown-over-sea.jpg;
     base16Scheme = ./mytheme.yaml;
+    polarity = "dark";
+    targets = {
+
+    };
+
+
     fonts = {
       monospace = {
         package = pkgs.jetbrains-mono;
         name = "JetBrains Mono";
       };
-      sizes = {
-        applications = 12;
-        terminal = 12;
+
+      serif = {
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
       };
-    };
-    cursor = {
-      color = "fed893";
+
+      sansSerif = {
+        package = pkgs.jetbrains-mono;
+        name = "JetBrains Mono";
+      };
     };
   };
 }

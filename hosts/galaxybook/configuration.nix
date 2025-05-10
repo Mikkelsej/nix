@@ -1,15 +1,17 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
+      ./../../modules/home-manager/desktopenv/stylix/default.nix
     ];
 
   # Bootloader setup
   boot.loader = {
     efi.canTouchEfiVariables = true;
+    timeout = null;
     grub = {
       enable = true;
       efiSupport = true;
@@ -20,6 +22,8 @@
           fwsetup
         }
       '';
+      backgroundColor = lib.mkForce "#000000";
+      default = "3";
     };
   };
 
@@ -181,35 +185,36 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-  stylix = {
-    enable = true;
-    image = ./../../wallpapers/sundown-over-sea.jpg;
-    polarity = "dark";
-    targets = {
-      
-    };
-    fonts = {
-      monospace = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrains Mono";
-      };
-
-      serif = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrains Mono";
-      };
-
-      sansSerif = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrains Mono";
-      };
-
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Emoji";
-      };
-    };
-  };
+  #stylix = {
+  #  enable = true;
+  #  image = ./../../wallpapers/sundown-over-sea.jpg;
+  #  base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";    
+  #  polarity = "dark";
+  #  targets = {
+  #    
+  #  };
+  #  fonts = {
+  #    monospace = {
+  #      package = pkgs.jetbrains-mono;
+  #      name = "JetBrains Mono";
+  #    };
+  #
+  #    serif = {
+  #      package = pkgs.jetbrains-mono;
+  #      name = "JetBrains Mono";
+  #    };
+  #
+  #    sansSerif = {
+  #      package = pkgs.jetbrains-mono;
+  #      name = "JetBrains Mono";
+  #    };
+  #
+  #    emoji = {
+  #      package = pkgs.noto-fonts-emoji;
+  #      name = "Noto Emoji";
+  #    };
+  #  };
+  #};
 
   fonts = {
     enableDefaultPackages = true;
@@ -235,42 +240,43 @@
       greeters.enso.enable = true;
     };
   };
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "mikke";
-  };
+
+  #services.displayManager.autoLogin = {
+  #  enable = true;
+  #  user = "mikke";
+  #};
 
   # Enable docker
-  virtualisation.docker.enable = true;
+  #virtualisation.docker.enable = true;
 
 
-  virtualisation.oci-containers = {
-    containers = {
-      fittrackee = {
-        image = "samr1/fittrackee:latest";
-        ports = [ "5000:5000" ];
-        environment = {
-          UI_URL = "http://localhost:5000";
-          DATABASE_URL = "postgresql://fittrackee:password@db/fittrackee";
-        };
-      };
+  #virtualisation.oci-containers = {
+  #  containers = {
+  #    fittrackee = {
+  #      image = "samr1/fittrackee:latest";
+  #      ports = [ "5000:5000" ];
+  #      environment = {
+  #        UI_URL = "http://localhost:5000";
+  #        DATABASE_URL = "postgresql://#fittrackee:password@db/fittrackee";
+  #      };
+  #    };
 
-      db = {
-        image = "postgres:15";
-        ports = [ "5432:5432" ];
-        environment = {
-          POSTGRES_DB = "fittrackee";
-          POSTGRES_USER = "fittrackee";
-          POSTGRES_PASSWORD = "password";
-        };
-      };
+  #    db = {
+  #      image = "postgres:15";
+  #      ports = [ "5432:5432" ];
+  #      environment = {
+  #        POSTGRES_DB = "fittrackee";
+  #        POSTGRES_USER = "fittrackee";
+  #        POSTGRES_PASSWORD = "password";
+  #      };
+  #    };
 
-      ui = {
-        image = "samr1/fittrackee-ui:latest";
-        ports = [ "3000:80" ];
-      };
-    };
-  };
+  #    ui = {
+  #      image = "samr1/fittrackee-ui:latest";
+  #      ports = [ "3000:80" ];
+  #    };
+  #  };
+  #};
 
 
   # Optional: Enable OpenSSH if needed

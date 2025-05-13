@@ -3,10 +3,8 @@
 
 # Global Property
 title-text: ""
-desktop-image: "background.jpg"
 desktop-color: "#242424"
 terminal-font: "Terminus Regular 14"
-terminal-box: "terminal_box_*.png"
 terminal-left: "0"
 terminal-top: "0"
 terminal-width: "100%"
@@ -31,11 +29,6 @@ terminal-border: "0"
   selected_item_pixmap_style = "select_*.png"
 }
 
-+ image {
-  top = 0%
-  left = 0%
-  file = "info.png"
-}
 
 # Show a countdown message using the label component
 + label {

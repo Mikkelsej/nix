@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     # Code Editor
     vscode
+    jetbrains.idea-ultimateq
     # hyprland & more
     hyprland
     hypridle
@@ -56,6 +57,8 @@
 
     fittrackee
     postgresql
+
+
   ];
 
   services.swayosd = {

@@ -24,7 +24,7 @@
       '';
       backgroundColor = lib.mkForce "#000000";
       default = "3";
-      theme = ./../../modules/nixos/grub-themes/Particle/theme.txt;
+      theme = ./../../modules/nixos/grub-themes/Particle;
     };
   };
 

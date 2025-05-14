@@ -1,25 +1,42 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
+      
     ];
 
   # Bootloader setup
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    grub = {
+  boot = {
+    plymouth = {
       enable = true;
-      efiSupport = true;
-      useOSProber = true;
-      device = "nodev";
-      extraEntries = ''
-        menuentry "Reboot into UEFI Firmware Settings" {
-          fwsetup
-        }
-      '';
+    };
+    consoleLogLevel = 0;  
+    kernelParams = [ 
+      "quiet"
+      "loglevel=0"
+      ];  
+    initrd.verbose = false;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      timeout = null;
+      grub = {
+        enable = true;
+        efiSupport = true;
+        useOSProber = true;
+        device = "nodev";
+        extraEntries = ''
+          menuentry "Reboot into UEFI Firmware Settings" {
+            fwsetup
+          }
+        '';
+        default = "3";
+        #backgroundColor = "000000";
+        splashImage = null;
+        theme = ./../../modules/nixos/grub-themes/Particle;
+      };
     };
   };
 
@@ -139,8 +156,6 @@
     pkgs.libheif
     pkgs.libheif.out   
 
-
-    gnumake
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -180,37 +195,6 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-
-  stylix = {
-    enable = true;
-    image = ./../../wallpapers/sundown-over-sea.jpg;
-    polarity = "dark";
-    targets = {
-      
-    };
-    fonts = {
-      monospace = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrains Mono";
-      };
-
-      serif = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrains Mono";
-      };
-
-      sansSerif = {
-        package = pkgs.jetbrains-mono;
-        name = "JetBrains Mono";
-      };
-
-      emoji = {
-        package = pkgs.noto-fonts-emoji;
-        name = "Noto Emoji";
-      };
-    };
-  };
-
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
@@ -222,12 +206,6 @@
   };
 
 
-  boot.consoleLogLevel = 0;  
-  boot.kernelParams = [ "quiet" "loglevel=0" ];  
-  boot.initrd.verbose = false;
-  boot.plymouth.enable = true;
-
-
   services.xserver = {
     enable = true;
     displayManager.lightdm = {
@@ -235,43 +213,6 @@
       greeters.enso.enable = true;
     };
   };
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "mikke";
-  };
-
-  # Enable docker
-  virtualisation.docker.enable = true;
-
-
-  virtualisation.oci-containers = {
-    containers = {
-      fittrackee = {
-        image = "samr1/fittrackee:latest";
-        ports = [ "5000:5000" ];
-        environment = {
-          UI_URL = "http://localhost:5000";
-          DATABASE_URL = "postgresql://fittrackee:password@db/fittrackee";
-        };
-      };
-
-      db = {
-        image = "postgres:15";
-        ports = [ "5432:5432" ];
-        environment = {
-          POSTGRES_DB = "fittrackee";
-          POSTGRES_USER = "fittrackee";
-          POSTGRES_PASSWORD = "password";
-        };
-      };
-
-      ui = {
-        image = "samr1/fittrackee-ui:latest";
-        ports = [ "3000:80" ];
-      };
-    };
-  };
-
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;

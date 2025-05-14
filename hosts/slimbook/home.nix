@@ -113,5 +113,6 @@
     ./../../modules/home-manager/git.nix
     ./../../modules/home-manager/desktopenv/hyprland/default.nix
     #./../../modules/home-manager/gtk.nix
+    ./../../modules/home-manager/desktopenv/stylix/default.nix    
   ];
 }

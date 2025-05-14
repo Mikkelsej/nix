@@ -1,12 +1,8 @@
-# GRUB2 Minimal Theme
+# GRUB2 Iconless Theme
 
-# Background color (dark grey)
 desktop-color: "#1d1d1d"
-
-# Title (empty to suppress extra labels)
 title-text: ""
 
-# Terminal settings (optional, but gives fallback if needed)
 terminal-font: "Unifont Regular 16"
 terminal-left: "0"
 terminal-top: "0"
@@ -14,7 +10,6 @@ terminal-width: "100%"
 terminal-height: "100%"
 terminal-border: "0"
 
-# Boot menu layout
 + boot_menu {
   left = 30%
   top = 30%
@@ -26,13 +21,14 @@ terminal-border: "0"
   item_height = 36
   item_padding = 4
   item_spacing = 6
-  # NO ICONS
-  # icon_width = 0
-  # icon_height = 0
-  # item_icon_space = 0
+
+  # Explicitly remove icon support
+  icon_width = 0
+  icon_height = 0
+  item_icon_space = 0
+  selected_item_pixmap_style = ""  # Prevent any highlight pixmaps
 }
 
-# Timeout label (optional)
 + label {
   top = 80%
   left = 50%

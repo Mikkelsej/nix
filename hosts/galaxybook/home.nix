@@ -11,7 +11,7 @@
   home.packages = with pkgs; [
     # Code Editor
     vscode
-    jetbrains.idea-ultimateq
+    jetbrains.idea-ultimate
     # hyprland & more
     hyprland
     hypridle
@@ -55,7 +55,7 @@
     swayosd
     
 
-    fittrackee
+    
     postgresql
 
 
@@ -88,7 +88,7 @@
 
   programs.home-manager.enable = true;
 
-  # Enable Docker
+  # Enable Dock for hyprland
   programs.nwg-dock-hyprland.enable = true;
 
   stylix.targets = {

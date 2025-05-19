@@ -206,14 +206,22 @@
   };
 
 
-  services.xserver = {
-    enable = true;
-    displayManager.lightdm = {
+  services = {
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "mikke";
+      };
+    };
+    xserver = {
       enable = true;
-      greeters.enso.enable = true;
+      displayManager.lightdm = {
+        enable = true;
+        greeters.enso.enable = true;
+      };
     };
   };
-
+  
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;
 

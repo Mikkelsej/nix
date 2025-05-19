@@ -108,9 +108,6 @@
   # Enable Zsh for user
   programs.zsh.enable = true;
 
-  # Enable automatic login
-  services.getty.autologinUser = "mikke";
-
   # Hyprland configuration (Wayland compositor)
   programs.hyprland = {
     enable = true;
@@ -211,6 +208,7 @@
     displayManager.lightdm = {
       enable = true;
       greeters.enso.enable = true;
+      background = "/home/mikke/nixos/wallpapers/sundown-over-sea.jpg";
     };
   };
 
@@ -222,10 +220,11 @@
   # Enable docker
   #virtualisation.docker.enable = true;
 
+  stylix.targets.plymouth.enable = false;
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;
 
   # Set state version (important for NixOS upgrades)
-  system.stateVersion = "24.11";  # Ensure you're using the correct state version
+  system.stateVersion = "25.05";  # Ensure you're using the correct state version
 }

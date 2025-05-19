@@ -4,7 +4,7 @@
   home.username = "mikke";
   home.homeDirectory = "/home/mikke";
 
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   nixpkgs.config.allowUnfree = true;
 
@@ -91,10 +91,13 @@
   # Enable Dock for hyprland
   programs.nwg-dock-hyprland.enable = true;
 
-  stylix.targets = {
-    waybar.enable = false;
-    kitty.enable = false;
-    rofi.enable = true;
+  stylix = {
+    enableReleaseChecks = false;
+    targets = {
+      waybar.enable = false;
+      kitty.enable = false;
+      rofi.enable = true;
+    };
   };
   
   #programs.starship = {

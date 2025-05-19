@@ -35,7 +35,7 @@
         default = "3";
         #backgroundColor = "000000";
         splashImage = null;
-        theme = ./../../modules/nixos/grub-themes/Particle;
+        theme = ./../../modules/nixos/grub-themes/Particle-window;
       };
     };
   };

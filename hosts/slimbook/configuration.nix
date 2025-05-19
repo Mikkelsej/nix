@@ -33,9 +33,8 @@
           }
         '';
         default = "3";
-        #backgroundColor = "000000";
         splashImage = null;
-        theme = ./../../modules/nixos/grub-themes/Particle;
+        theme = ./../../modules/nixos/grub-themes/Particle-window;
       };
     };
   };
@@ -185,15 +184,18 @@
   };
   
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
-
-  nix.settings.auto-optimise-store = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   fonts = {
     enableDefaultPackages = true;
@@ -222,9 +224,12 @@
     };
   };
   
+  stylix.targets.plymouth.enable = false;
+  
+
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;
 
   # Set state version (important for NixOS upgrades)
-  system.stateVersion = "24.11";  # Ensure you're using the correct state version
+  system.stateVersion = "25.05";  # Ensure you're using the correct state version
 }

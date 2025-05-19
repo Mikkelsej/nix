@@ -33,7 +33,6 @@
           }
         '';
         default = "3";
-        #backgroundColor = "000000";
         splashImage = null;
         theme = ./../../modules/nixos/grub-themes/Particle-window;
       };
@@ -182,15 +181,20 @@
   };
   
 
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than 7d";
+    };
+
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
 
-  nix.settings.auto-optimise-store = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   fonts = {
     enableDefaultPackages = true;
@@ -212,13 +216,6 @@
     };
   };
 
-  #services.displayManager.autoLogin = {
-  #  enable = true;
-  #  user = "mikke";
-  #};
-
-  # Enable docker
-  #virtualisation.docker.enable = true;
 
   stylix.targets.plymouth.enable = false;
 

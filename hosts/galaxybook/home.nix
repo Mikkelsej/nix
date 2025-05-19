@@ -92,7 +92,6 @@
   programs.nwg-dock-hyprland.enable = true;
 
   stylix = {
-    enableReleaseChecks = false;
     targets = {
       waybar.enable = false;
       kitty.enable = false;

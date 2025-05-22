@@ -8,6 +8,8 @@
       ./../../modules/nixos/maintainence.nix
     ];
 
+  time.hardwareClockInLocalTime = true;
+
   # Bootloader setup
   boot = {
     plymouth = {

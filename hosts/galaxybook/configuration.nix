@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
-      
+      ./../../modules/nixos/maintainence.nix
     ];
 
   # Bootloader setup
@@ -174,25 +174,11 @@
     backupFileExtension = "backup";
   };
 
-  # Automatic system upgrade and garbage collection
-  system.autoUpgrade = {
-    enable = true;
-    dates = "daily";
-  };
   
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  nix = {
-    gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than 7d";
-    };
-
-    settings = {
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-  };
+  
 
 
 

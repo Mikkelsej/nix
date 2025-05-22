@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, inputs, lib, hostname, ... }:
 
 {
   imports =
@@ -39,7 +39,7 @@
     };
   };
 
-  networking.hostName = "nixos"; # Define hostname
+  #networking.hostName = "nixos"; # Define hostname
   networking.networkmanager.enable = true;  # Enable NetworkManager
 
   # Set the timezone and locale
@@ -167,7 +167,7 @@
 
   # Enable Home Manager configuration for user 'mikke'
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs hostname; };
     users = {
       mikke = import ./home.nix;  # Import user-specific home manager config
     };

@@ -1,8 +1,8 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostname, ... }:
 
 
 let
-  zshAliases = import ./aliases.nix { inherit config pkgs; };
+  zshAliases = import ./aliases.nix { inherit config pkgs hostname; };
   zshInitContent = import ./init.nix { inherit config pkgs; };
 in
 

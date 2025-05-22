@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hostname, ... }:
 
 {
     shellAliases = {
@@ -28,7 +28,7 @@
       gcredential = "git config credential.helper store";
 
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
-      update-flake = "sudo nixos-rebuild switch --flake ~/nixos/#nixos";
-      update-home = "home-manager switch --flake ~/nixos#mikke";
+      flake-switch = "sudo nixos-rebuild switch --flake ~/nixos#${hostname}";
+      home-switch = "home-manager switch --flake ~/nixos#${hostname}";
     };
 }

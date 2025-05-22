@@ -30,5 +30,6 @@
       update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
       flake-switch = "sudo nixos-rebuild switch --flake ~/nixos#${hostname}";
       home-switch = "home-manager switch --flake ~/nixos#${hostname}";
+      update-flake = "cd ~/nixos && nix flake update && flake-switch";
     };
 }

@@ -197,13 +197,29 @@
 
   services.xserver = {
     enable = true;
-    displayManager.lightdm = {
+    displayManager.sddm = {
       enable = true;
-      greeters.enso.enable = true;
-      background = "/home/mikke/nixos/wallpapers/sundown-over-sea.jpg";
+      theme = "breeze";
+
+      settings = {
+        Theme = {
+          Background = "/etc/sundown-over-sea.jpg";
+        };
+      };
+      #greeters.enso = {
+      #  enable = true;
+      #  extraConfig = ''
+      #    clock-format = %H:%M
+      #  '';
+      #};  
+      #extraSeatDefaults = ''
+      #  greeter-session= lightdm-enso-greeter
+      #'';
+      #background = "/etc/sundown-over-sea.jpg";
     };
   };
 
+  environment.etc."sundown-over-sea.jpg".source = ./../../wallpapers/sundown-over-sea.jpg;
 
   stylix.targets.plymouth.enable = false;
 

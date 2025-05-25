@@ -8,6 +8,9 @@
 
     # Waybar
     waybar &
+
+    # Network Manager Applet
+    nm-applet --indicator &
   '';
 
   home.file.".config/hypr/scripts/startup.sh".executable = true;

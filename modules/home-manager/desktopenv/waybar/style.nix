@@ -42,6 +42,7 @@ tooltip {
 #cpu,
 #pulseaudio,
 #memory,
+#tray,
 #temperature {
     color: white; /* Light color for icons */
     transition: all .3s ease;
@@ -99,6 +100,7 @@ tooltip {
 
 #tray {
     padding: 0px 5px;
+    color: rgba(255, 255, 255, 0.6); /* Light color */
     transition: all .3s ease;
 }
 

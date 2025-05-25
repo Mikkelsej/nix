@@ -3,13 +3,11 @@
 
     {
     settings = [{
-            "layer" = "top";
+        "layer" = "top";
         "position" = "top";
         "reload_style_on_change" = true;
         "modules-left" = [
             "hyprland/workspaces"
-            "custom/pacman"
-            "tray"
         ];
 
         "modules-right" = [
@@ -116,6 +114,7 @@
                 "cpu"
                 "memory"
                 "temperature"
+                "tray"
                 "custom/endpoint"
             ];
         };

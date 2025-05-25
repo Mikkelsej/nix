@@ -23,7 +23,7 @@
         ./hyprland.nix
 
         # Scripts
-        ./scripts/startup.nix
+        ./scripts/startup/default.nix
         ./scripts/screenshot/default.nix
 
         # Wallpaper

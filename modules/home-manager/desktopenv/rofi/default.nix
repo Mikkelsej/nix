@@ -4,7 +4,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;  
-    theme = "gruvbox-dark";  
+    theme = "./themes/nord.rasi";  
 
     # Extra Rofi settings
     extraConfig = {

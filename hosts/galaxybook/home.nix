@@ -95,7 +95,7 @@
     targets = {
       waybar.enable = false;
       kitty.enable = false;
-      rofi.enable = true;
+      rofi.enable = false;
     };
   };
   

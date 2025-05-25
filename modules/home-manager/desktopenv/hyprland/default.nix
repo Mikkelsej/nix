@@ -28,15 +28,13 @@
 
         # Wallpaper
         ./hyprpaper.nix
-        #./../pywal.nix
+        
 
         # theme
 
-        # Application Launcher
-        #./../rofi.nix
         
-        # File manager
-        #./../nautilus.nix
+        
+        
 
         # Terminal
         ./../kitty.nix
@@ -46,5 +44,12 @@
 
         # Not implemented yet
         
+        #./../pywal.nix
+
+        # File manager
+        #./../nautilus.nix
+
+        # Application Launcher
+        #./../rofi.nix
     ];
 }

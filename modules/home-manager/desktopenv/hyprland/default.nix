@@ -24,6 +24,7 @@
 
         # Scripts
         ./scripts/startup.nix
+        ./scripts/screenshot/default.nix
 
         # Wallpaper
         ./hyprpaper.nix
@@ -44,6 +45,6 @@
         ./../zsh/default.nix
 
         # Not implemented yet
-        #./scripts/screenshot.nix
+        
     ];
 }

@@ -50,6 +50,6 @@
         #./../nautilus.nix
 
         # Application Launcher
-        ./../rofi.nix
+        ./../rofi/default.nix
     ];
 }

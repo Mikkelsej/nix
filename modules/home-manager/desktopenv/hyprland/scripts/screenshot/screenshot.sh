@@ -1,7 +1,3 @@
-{ config, lib, pkgs, ... }:
-
-{
-  home.file.".config/hypr/scripts/screenshot.sh".text = ''
 #!/usr/bin/env bash
 
 prompt='Screenshot'
@@ -207,7 +203,3 @@ $option_2)
   run_cmd --opt2
   ;;
 esac
-  '';
-
-  home.file.".config/hypr/scripts/screenshot.sh".executable = true;
-}

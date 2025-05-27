@@ -11,7 +11,9 @@
     base16Scheme = ./mytheme.yaml;
     polarity = "dark";
     targets = {
-
+      waybar.enable = false;
+      kitty.enable = false;
+      rofi.enable = false;
     };
 
 

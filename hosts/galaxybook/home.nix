@@ -51,6 +51,9 @@
     libnotify
     swayosd
     
+    xpad
+
+    yazi
   ];
 
   services.swayosd = {
@@ -79,14 +82,6 @@
 
   # Enable Dock for hyprland
   programs.nwg-dock-hyprland.enable = true;
-
-  stylix = {
-    targets = {
-      waybar.enable = false;
-      kitty.enable = false;
-      rofi.enable = false;
-    };
-  };
 
   imports = [
     ./../../modules/home-manager/programming_languages/default.nix

@@ -54,6 +54,8 @@
     xpad
 
     yazi
+
+    onedrive
   ];
 
   services.swayosd = {

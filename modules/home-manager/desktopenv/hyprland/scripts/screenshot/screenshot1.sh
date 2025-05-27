@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Directory to save screenshots
-screenshot_dir=~/Screenshots
+screenshot_dir=~/Pictures/Screenshots
 
 # Ensure the directory exists
 mkdir -p "$screenshot_dir"
@@ -13,4 +13,4 @@ filename="screenshot_$(date +'%Y-%m-%d_%H-%M-%S').png"
 filepath="$screenshot_dir/$filename"
 
 # Take screenshot of a selected area, copy to clipboard and save
-grimblast --notify copysave area "$filepath"
+grimblast --notify --freeze copysave area "$filepath"

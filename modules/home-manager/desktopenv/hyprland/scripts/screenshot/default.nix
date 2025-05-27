@@ -2,7 +2,7 @@
 
 {
   home.file.".config/hypr/scripts/screenshot.sh" = {
-    source = ./screenshot.sh;
+    source = ./screenshot1.sh;
     executable = true;
   };
 }

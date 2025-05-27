@@ -5,7 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
-      ./../../modules/nixos/maintainence.nix
+      ./../../modules/nixos/maintainence.nix      
     ];
 
   time.hardwareClockInLocalTime = true;
@@ -139,15 +139,7 @@
     brightnessctl # For brigtness keybinding
     pulseaudio # For Volume Keybinding
     playerctl # For Volume Control
-    nerd-fonts.agave
-    breeze-hacked-cursor-theme
-    capitaine-cursors
     bibata-cursors
-    gtk4
-    pinta
-
-    
-
 
     home-manager
     # Add support for HEIC image preview in Nautilus
@@ -195,12 +187,12 @@
   };
 
 
-  services.xserver = {
-    enable = true;
+  services = {
+    #enable = true;
     displayManager.sddm = {
       enable = true;
       theme = "breeze";
-
+      wayland.enable = true;
       settings = {
         Theme = {
           Background = "/etc/sundown-over-sea.jpg";

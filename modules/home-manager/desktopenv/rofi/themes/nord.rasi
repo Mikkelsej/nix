@@ -12,7 +12,7 @@
     fg3:    #4C566A;
 }
 
-@import "/nixos/modules/home-manager/desktopenv/rofi/themes/rounded-template.rasi"
+@import "nixos/modules/home-manager/desktopenv/rofi/themes/rounded-template.rasi"
 
 element selected {
     text-color: @bg1;

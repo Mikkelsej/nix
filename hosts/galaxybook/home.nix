@@ -58,7 +58,7 @@
     
     postgresql
 
-
+    wofi
   ];
 
   services.swayosd = {
@@ -96,6 +96,7 @@
       waybar.enable = false;
       kitty.enable = false;
       rofi.enable = false;
+      wofi.enable = true;
     };
   };
   

@@ -18,7 +18,7 @@ in {
       type = types.str;
       default = ''
         {
-          "layer": "top",
+          "layer": "above",
           "position": "bottom",
           "alignment": "center",
           "exclusive": true,
@@ -92,7 +92,7 @@ in {
       type = types.str;
       default = ''
         #!/bin/sh
-        nwg-dock-hyprland -i 32 -w 5 -mb 10 -ml 10 -mr 10 -x -s "style.css" -c "rofi -show drun"
+        nwg-dock-hyprland -i 32 -w 5 -mb 10 -ml 10 -mr 10 -s "style.css" -c "rofi -show drun" -d
       '';
       description = "Launch script for nwg-dock-hyprland.";
     };

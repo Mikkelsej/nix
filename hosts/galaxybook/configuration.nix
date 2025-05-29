@@ -197,6 +197,11 @@
         Theme = {
           Background = "/etc/sundown-over-sea.jpg";
         };
+        General = {
+          Locale = "da_DK.UTF-8";
+          TimeZone = "Europe/Copenhagen";
+          GreeterEnvironment = "TZ=Europe/Copenhagen";          
+        };
       };
       #greeters.enso = {
       #  enable = true;

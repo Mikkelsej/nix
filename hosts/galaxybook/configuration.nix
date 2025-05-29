@@ -8,7 +8,7 @@
       ./../../modules/nixos/maintainence.nix      
     ];
 
-  time.hardwareClockInLocalTime = true;
+  time.hardwareClockInLocalTime = false;
 
   # Bootloader setup
   boot = {
@@ -188,33 +188,48 @@
 
 
   services = {
-    #enable = true;
-    displayManager.sddm = {
+    xserver = {
       enable = true;
-      theme = "breeze";
-      wayland.enable = true;
-      settings = {
-        Theme = {
-          Background = "/etc/sundown-over-sea.jpg";
-        };
-        General = {
-          Locale = "da_DK.UTF-8";
-          TimeZone = "Europe/Copenhagen";
-          GreeterEnvironment = "TZ=Europe/Copenhagen";          
+      displayManager = {
+        lightdm = {
+          enable = true;
+          greeters.enso = {
+            enable = true;
+          };
+        background = "/etc/sundown-over-sea.jpg";    
         };
       };
-      #greeters.enso = {
-      #  enable = true;
-      #  extraConfig = ''
-      #    clock-format = %H:%M
-      #  '';
-      #};  
-      #extraSeatDefaults = ''
-      #  greeter-session= lightdm-enso-greeter
-      #'';
-      #background = "/etc/sundown-over-sea.jpg";
     };
   };
+
+  #services = {
+  #  enable = true;
+  #  displayManager.sddm = {
+  #    enable = true;
+  #    theme = "breeze";
+  #    wayland.enable = true;
+  #    settings = {
+  #      Theme = {
+  #        Background = "/etc/sundown-over-sea.jpg";
+  #      };
+  #      General = {
+  #        Locale = "da_DK.UTF-8";
+  #        TimeZone = "Europe/Copenhagen";
+  #        GreeterEnvironment = "TZ=Europe/Copenhagen";          
+  #      };
+  #    };
+  #    greeters.enso = {
+  #      enable = true;
+  #      extraConfig = ''
+  #        clock-format = %H:%M
+  #      '';
+  #    };  
+  #    extraSeatDefaults = ''
+  #      greeter-session= lightdm-enso-greeter
+  #    '';
+  #    background = "/etc/sundown-over-sea.jpg";
+  #  };
+  #};
 
   environment.etc."sundown-over-sea.jpg".source = ./../../wallpapers/sundown-over-sea.jpg;
 

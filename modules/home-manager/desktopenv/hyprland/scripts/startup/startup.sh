@@ -7,3 +7,6 @@ waybar &
 
 # Network Manager Applet
 nm-applet --indicator &
+
+# Onedrive
+onedrive --monitor &

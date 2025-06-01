@@ -12,6 +12,7 @@
 
         "modules-right" = [
             "group/expand"
+            "custom/apps"
             "pulseaudio"
             "bluetooth"
             "network"
@@ -132,6 +133,11 @@
         "tray" = {
             "icon-size" = 16;
             "spacing" = 12;
+        };
+        "custom/apps" = {
+            "exec" = ".config/waybar/scripts/taskbar.sh";
+            "interval" = "5";
+            "format" = {};
         };
     }];
     }

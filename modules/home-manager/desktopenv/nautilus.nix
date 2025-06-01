@@ -28,9 +28,9 @@
   ];
 
   # Link thumbnailers for preview support
-  home.file = {
-    ".config/thumbnailers" = {
-      source = "/nix/store/..."; # Ensure to link thumbnailers path here if needed.
-    };
-  };
+  #home.file = {
+  #  ".config/thumbnailers" = {
+  #    source = "/nix/store/..."; # Ensure to link thumbnailers path here if needed.
+  #  };
+  #};
 }

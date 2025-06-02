@@ -41,6 +41,7 @@
     
     discord
     spotify
+    spotify-tray
     obsidian
 
     gparted
@@ -54,7 +55,8 @@
     xpad
 
     yazi
-
+    
+    onedrivegui
     onedrive
   ];
 

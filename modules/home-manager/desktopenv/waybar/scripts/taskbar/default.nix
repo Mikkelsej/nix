@@ -1,28 +1,8 @@
 { config, pkgs, ... }:
 
-let
-  TaskbarScript = ''
-    #!/bin/bash
-
-    apps=""
-
-    if pgrep -x "discord" > /dev/null; then
-      apps+=" "
-    fi
-
-    if pgrep -x "spotify" > /dev/null; then
-      apps+=" "
-    fi
-
-    if pgrep -x "onedrive" > /dev/null; then
-      apps+=" "
-    fi
-
-    echo "$apps"
-  '';
-in {
-  home.file.".config/waybar/scripts/taskbar.sh" = {
-    text = TaskbarScript;
+{
+  home.file.".config/waybar/scripts/onedrive.sh" = {
+    source = ./onedrive.sh;
     executable = true;
   };
 

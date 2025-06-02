@@ -43,6 +43,7 @@ tooltip {
 #pulseaudio,
 #memory,
 #tray,
+#custom-onedrive,
 #temperature {
     color: white; /* Light color for icons */
     transition: all .3s ease;
@@ -59,11 +60,10 @@ tooltip {
 #cpu:hover,
 #pulseaudio:hover,
 #memory:hover,
+#custom-onedrive:hover,
+#clock:hover,
 #temperature:hover {
     color: #1E90FF;  /* Change to blue on hover */
-}
-#clock:hover {
-    color: #1E90FF;
 }
 #battery {
     padding: 0px 5px;
@@ -102,6 +102,7 @@ tooltip {
     padding: 0px 5px;
     color: rgba(255, 255, 255, 0.6); /* Light color */
     transition: all .3s ease;
+    /*show-passive-items: true;*/
 }
 
 #tray menu * {

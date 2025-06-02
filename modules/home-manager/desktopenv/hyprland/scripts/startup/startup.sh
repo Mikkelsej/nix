@@ -9,4 +9,4 @@ waybar &
 nm-applet --indicator &
 
 # Onedrive
-onedrive --monitor &
+onedrive -m &

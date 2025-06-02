@@ -12,7 +12,7 @@
 
         "modules-right" = [
             "group/expand"
-            "custom/apps"
+            "custom-onedrive"
             "pulseaudio"
             "bluetooth"
             "network"
@@ -134,10 +134,11 @@
             "icon-size" = 16;
             "spacing" = 12;
         };
-        "custom/apps" = {
-            "exec" = ".config/waybar/scripts/taskbar.sh";
-            "interval" = "5";
-            "format" = {};
+        "custom-onedrive" = {
+            "exec" = "echo -n '󰅟  '";
+            /* "exec" = ".config/waybar/scripts/onedrive.sh"; */
+            "interval" = 5;
+            "format" = "{}";
         };
     }];
     }

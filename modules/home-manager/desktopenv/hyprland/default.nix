@@ -3,6 +3,7 @@
     imports = [
         # Statusbar
         ./../waybar/default.nix
+        ./../waybar/scripts/taskbar/default.nix
 
         # Style
         ./../fastfetch.nix

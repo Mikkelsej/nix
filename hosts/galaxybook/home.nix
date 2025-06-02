@@ -56,7 +56,6 @@
 
     yazi
     
-    onedrivegui
     onedrive
   ];
 

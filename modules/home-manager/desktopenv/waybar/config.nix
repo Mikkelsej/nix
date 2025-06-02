@@ -12,7 +12,7 @@
 
         "modules-right" = [
             "group/expand"
-            "custom-onedrive"
+            "custom/onedrive"
             "pulseaudio"
             "bluetooth"
             "network"
@@ -134,10 +134,12 @@
             "icon-size" = 16;
             "spacing" = 12;
         };
-        "custom-onedrive" = {
+        "custom/onedrive" = {
             "exec" = ".config/waybar/scripts/onedrive.sh";
-            "interval" = 5;
+            "interval" = 2;
             "format" = " {} ";
+            "tooltip-format" = "Onedrive is Running";
+            "on-click" = "nautilus ~/OneDrive";
         };
     }];
     }

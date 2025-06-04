@@ -4,7 +4,9 @@ apps=""
 
 
 if pgrep "onedrive" > /dev/null; then
-  apps+="󰅟 "  # Nerd Font OneDrive icon
+  apps+="󰅟 "
+else
+  apps+="󰧠 "
 fi
 
 echo "$apps"

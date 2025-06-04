@@ -138,7 +138,7 @@
             "exec" = ".config/waybar/scripts/onedrive.sh";
             "interval" = 2;
             "format" = " {} ";
-            "tooltip-format" = "Onedrive is Running";
+            "tooltip-format" = " {} ";
             "on-click" = "nautilus ~/OneDrive";
         };
     }];

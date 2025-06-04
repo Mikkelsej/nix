@@ -14,6 +14,7 @@
       waybar.enable = false;
       kitty.enable = false;
       rofi.enable = false;
+      neovim.enable = false;
     };
 
 

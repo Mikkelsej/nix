@@ -1,18 +1,16 @@
 { config, pkgs, ... }:
 
-let 
-  lua = name: builtins.readFile ./lazy-bootstrap.lua;
-in
-  {
-    programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-      
-      plugins = [ ];
 
-      extraConfig = 
-        ''
-        ${lua "lazy-bootstrap.lua"}
-        '';
-    };
-  }
+{
+
+  home.file.".config/nvim/init.lua".source = ./init.lua;
+
+  home.file.".config/nvim/lua/lazy-bootstrap.lua".source = ./lua/lazy-bootstrap.lua;
+
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    extraConfig = "";
+  };
+}

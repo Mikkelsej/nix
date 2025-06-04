@@ -1,14 +1,41 @@
 #!/usr/bin/env bash
 
-if [[ "$1" == "1" ]]; then
+# Icons:
+# 󰾆 (power-saver)
+# 󰾅 (balanced)
+# 󰓅 (performance)
+
+if [[ -n "$1" ]]; then
     CURRENT=$(powerprofilesctl get)
-    if [[ "$CURRENT" == "performance" ]]; then
-        powerprofilesctl set balanced
-    else
-        powerprofilesctl set performance
-    fi
+    case "$CURRENT" in
+        "power-saver")
+            powerprofilesctl set balanced
+            ;;
+        "balanced")
+            powerprofilesctl set performance
+            ;;
+        "performance")
+            powerprofilesctl set power-saver
+            ;;
+    esac
 fi
 
 CURRENT_PROFILE=$(powerprofilesctl get)
 
-echo "{\"text\": \"$CURRENT_PROFILE\", \"tooltip\": \"Power Profile: $CURRENT_PROFILE\"}"
+# Set the appropriate icon
+case "$CURRENT_PROFILE" in
+    "power-saver")
+        ICON=" 󰾆 "
+        ;;
+    "balanced")
+        ICON=" 󰾅 "
+        ;;
+    "performance")
+        ICON=" 󰓅 "
+        ;;
+    *)
+        ICON="?"
+        ;;
+esac
+
+echo "{\"text\": \"$ICON\", \"tooltip\": \"Power Profile: $CURRENT_PROFILE\"}"

@@ -109,8 +109,6 @@
   # Enable Zsh for user
   programs.zsh.enable = true;
 
-  # Enable automatic login
-  services.getty.autologinUser = "mikke";
 
   # Hyprland configuration (Wayland compositor)
   programs.hyprland = {
@@ -192,22 +190,41 @@
     ];
   };
 
+  #services = {
+  #  xserver = {
+  #    enable = true;
+  #    displayManager = {
+  #      lightdm = {
+  #        enable = true;
+  #        greeters.enso = {
+  #          enable = true;
+  #        };
+  #      background = "/etc/sundown-over-sea.jpg";    
+  #      };
+  #    };
+  #  };
+  #};
 
   services = {
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "mikke";
-      };
-    };
-    xserver = {
+    displayManager.sddm = {
       enable = true;
-      displayManager.lightdm = {
-        enable = true;
-        greeters.enso.enable = true;
+      theme = "breeze";
+      wayland.enable = true;
+      settings = {
+        Theme = {
+          Background = "/etc/sundown-over-sea.jpg";
+        };
+        General = {
+          Locale = "da_DK.UTF-8";
+          TimeZone = "Europe/Copenhagen";
+          GreeterEnvironment = "TZ=Europe/Copenhagen";   
+          Background = "/etc/sundown-over-sea.jpg";       
+        };
       };
     };
   };
+
+  environment.etc."sundown-over-sea.jpg".source = ./../../wallpapers/sundown-over-sea.jpg;
   
   stylix.targets.plymouth.enable = false;
   

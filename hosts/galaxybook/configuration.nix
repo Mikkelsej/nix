@@ -8,6 +8,8 @@
       ./../../modules/nixos/maintainence.nix      
     ];
 
+
+  services.power-profiles-daemon.enable = true;  
   time.hardwareClockInLocalTime = false;
 
   # Bootloader setup
@@ -146,6 +148,7 @@
     pkgs.libheif
     pkgs.libheif.out   
 
+    power-profiles-daemon
   ];
   
   hardware.bluetooth.enable = true; # enables support for Bluetooth

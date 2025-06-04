@@ -9,4 +9,4 @@ waybar &
 nm-applet --indicator &
 
 # Onedrive
-onedrive -m &
+onedrive -m --disable-notifications &

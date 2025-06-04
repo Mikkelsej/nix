@@ -8,7 +8,7 @@ if pgrep "onedrive" > /dev/null; then
   msg+="OneDrive is Running"
 else
   apps+="󰧠 "
-  msg+="OneDrive is Not Running
+  msg+="OneDrive is Not Running"
 fi
 
 echo "$apps"

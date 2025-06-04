@@ -1,17 +1,18 @@
 { config, pkgs, ... }:
 
-{
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    configure = {
-      customRC = ''
+let 
+  lua = name: builtins.readFile ./lazy-bootstrap.lua;
+in
+  {
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      
+      plugins = [ ];
+
+      extraConfig = 
+        ''
         ${lua "lazy-bootstrap.lua"}
-      '';
-
-      packages.myVimPackage = with pkgs.vimPlugins; {
-
-      };
-    }
-  };
-}
+        '';
+    };
+  }

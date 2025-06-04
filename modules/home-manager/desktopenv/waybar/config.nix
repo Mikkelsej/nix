@@ -112,6 +112,7 @@
             "modules" = [
                 "custom/expand"
                 "custom/colorpicker"
+                "custom/power-profile"
                 "cpu"
                 "memory"
                 "temperature"
@@ -138,6 +139,14 @@
             "exec" = ".config/waybar/scripts/onedrive.sh";
             "interval" = 2;
             "on-click" = "nautilus ~/OneDrive";
+            "return-type" = "json";
+        };
+        "custom/power-profile" = {
+            "exec" = "~/.config/waybar/scripts/power-profile.sh";
+            "interval" = 2;
+            "on-click" = "sh -c '.config/waybar/scripts/power-profile.sh 1'";
+            #"on-click" = "notify-send 'Waybar click works!'";
+            "tooltip" = true;
             "return-type" = "json";
         };
     }];

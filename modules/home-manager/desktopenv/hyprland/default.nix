@@ -4,6 +4,7 @@
         # Statusbar
         ./../waybar/default.nix
         ./../waybar/scripts/onedrive/default.nix
+        ./../waybar/scripts/power-profile/default.nix
 
         # Style
         ./../fastfetch.nix

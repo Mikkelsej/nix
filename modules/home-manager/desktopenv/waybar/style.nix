@@ -44,6 +44,7 @@ tooltip {
 #memory,
 #tray,
 #custom-onedrive,
+#custom-power-profile,
 #temperature {
     color: white; /* Light color for icons */
     transition: all .3s ease;
@@ -61,6 +62,7 @@ tooltip {
 #pulseaudio:hover,
 #memory:hover,
 #custom-onedrive:hover,
+#custom-power-profile:hover,
 #clock:hover,
 #temperature:hover {
     color: #1E90FF;  /* Change to blue on hover */

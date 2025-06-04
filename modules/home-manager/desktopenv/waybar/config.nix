@@ -137,9 +137,8 @@
         "custom/onedrive" = {
             "exec" = ".config/waybar/scripts/onedrive.sh";
             "interval" = 2;
-            "format" = " {} ";
-            "tooltip-format" = " {} ";
             "on-click" = "nautilus ~/OneDrive";
+            "return-type" = "json";
         };
     }];
     }

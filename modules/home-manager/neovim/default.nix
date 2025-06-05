@@ -11,4 +11,8 @@
     defaultEditor = true;
     extraConfig = "";
   };
+
+  home.packages = with pkgs; [
+    ripgrep # Install ripgrep for telescope
+  ];
 }

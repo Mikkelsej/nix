@@ -57,6 +57,8 @@
     yazi
     
     onedrive
+
+    tree-sitter
   ];
 
   services.swayosd = {

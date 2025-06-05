@@ -1,4 +1,4 @@
 require("lazy-bootstrap")
-require("plugins")
+require("lazy").setup("plugins")
 require("options")
 

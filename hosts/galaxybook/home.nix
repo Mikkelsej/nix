@@ -59,6 +59,8 @@
     onedrive
 
     tree-sitter
+    
+    gcc
   ];
 
   services.swayosd = {

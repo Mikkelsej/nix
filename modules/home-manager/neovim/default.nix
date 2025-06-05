@@ -3,7 +3,7 @@
 
 {
 
-  home.file.".config/nvim".source = ./neovim-config/;
+  home.file.".config/nvim".source = ./nvim-config;
   home.file.".config/nvim".recursive = true;
 
   programs.neovim = {

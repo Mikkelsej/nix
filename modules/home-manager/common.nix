@@ -7,5 +7,5 @@
     ./desktopenv/hyprland/default.nix
     ./desktopenv/stylix/default.nix
     ./neovim/default.nix
-  ]
+  ];
 } 

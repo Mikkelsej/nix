@@ -13,6 +13,7 @@
   };
 
   home.packages = with pkgs; [
-    ripgrep # Install ripgrep for telescope
+    ripgrep # Needed for telescope
+    gcc # Needed for telescope
   ];
 }

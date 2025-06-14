@@ -59,8 +59,6 @@
     onedrive
 
     tree-sitter
-    
-    gcc
   ];
 
   services.swayosd = {
@@ -71,12 +69,15 @@
 
   };
 
-  fonts.fontconfig = {
-    enable = true;
-    defaultFonts = {
-      monospace = [ "JetBrains Mono" ];
-      sansSerif = [ "Noto Sans" ];
-      serif = [ "Noto Serif" ];
+  fonts = {
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = [ "JetBrains Mono" ];
+        sansSerif = [ "Noto Sans" ];
+        serif = [ "Noto Serif" ];
+      };
     };
   };
 

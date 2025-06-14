@@ -176,16 +176,16 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   
-
+  virtualisation.docker.enable = true;
 
 
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
+      nerd-fonts.jetbrains-mono
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-emoji
     ];
   };
 

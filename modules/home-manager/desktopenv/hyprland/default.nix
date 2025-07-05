@@ -54,4 +54,20 @@
         # Application Launcher
         ./../rofi/default.nix
     ];
+
+
+    # Enable Dock for hyprland
+    programs.nwg-dock-hyprland.enable = true;
+
+    home.packages = with pkgs; [
+        hyprland
+        hypridle
+        hyprlock
+        hyprpolkitagent
+        hyprpaper
+
+        waybar
+
+        nwg-dock-hyprland
+    ];
 }

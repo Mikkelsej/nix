@@ -12,22 +12,15 @@
     # Code Editor
     vscode
     jetbrains.idea-ultimate
-    # hyprland & more
-    hyprland
-    hypridle
-    hyprlock
-    hyprpolkitagent
-    # Status bar
-    waybar
-    # Wallpaper
+
     waypaper
-    hyprpaper
+    
     # Notification Daemon
     swaynotificationcenter
     # Application Launcher
     rofi-wayland
-    # Docker
-    nwg-dock-hyprland
+  
+    
     # Screenshots    
     grim
     slurp
@@ -82,14 +75,13 @@
   };
 
   home.sessionVariables = {
-    EDTOR = "nvim";
+    EDTOR = "code";
     TERMINAL = "kitty";
   };
 
   programs.home-manager.enable = true;
 
-  # Enable Dock for hyprland
-  programs.nwg-dock-hyprland.enable = true;
+  
 
   imports = [
    ./../../modules/home-manager/common.nix

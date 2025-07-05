@@ -27,8 +27,9 @@
       gcheck = "git checkout";
       gcredential = "git config credential.helper store";
 
-      flake-switch = "cd && sudo nixos-rebuild switch --flake 'path:nixos/#${hostname}'";
+      switch-flake="sudo nixos-rebuild switch --flake 'path:/home/mikke/nixos/#${hostname}'";
+
       home-switch = "home-manager switch --flake ~/nixos#${hostname}";
-      update-flake = "cd ~/nixos && nix flake update && flake-switch";
+      update-flake = "nix flake update --flake 'path:/home/mikke/nixos' && switch-flake";
     };
 }

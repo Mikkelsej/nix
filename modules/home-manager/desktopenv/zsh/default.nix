@@ -28,6 +28,5 @@ in
     SHELL = "${pkgs.zsh}/bin/zsh";
   };
 
-  # Enable Home Manager to manage the user's home environment
-  programs.home-manager.enable = true;
+  programs.starship.enable = true;
 }

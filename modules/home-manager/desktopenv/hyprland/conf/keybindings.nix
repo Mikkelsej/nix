@@ -48,12 +48,11 @@ bind = $mainMod, G, togglegroup                                                 
 bind = $mainMod, K, swapsplit                                                               # Swapsplit
 
 # Actions
-bind = $mainMod CTRL, R, exec, hyprctl reload                                             # Reload Hyprland configuration
-bind = $mainMod, PRINT, exec, $SCRIPTS/screenshot.sh                                  # Take a screenshot
-bind = $mainMod SHIFT, S, exec, $SCRIPTS/screenshot.sh                                # Take a screenshot
-bind = $mainMod SHIFT, W, exec, waypaper --random                                         # Change the wallpaper
-bind = $mainMod CTRL, W, exec, waypaper                                                   # Open wallpaper selector
-bind = $mainMod CTRL, RETURN, exec, pkill rofi || rofi -show drun -replace -i             # Open application launcher
+bind = $mainMod CTRL, R, exec, hyprctl reload                                               # Reload Hyprland configuration
+bind = $mainMod, PRINT, exec, $SCRIPTS/screenshot.sh                                        # Take a screenshot
+bind = $mainMod SHIFT, S, exec, $SCRIPTS/screenshot.sh                                      # Take a screenshot
+bind = $mainMod CTRL, W, exec, waypaper --folder ~/nixos/wallpapers                         # Open wallpaper selector
+bind = $mainMod CTRL, RETURN, exec, pkill rofi || rofi -show drun -replace -i               # Open application launcher
 
 
 # Workspaces

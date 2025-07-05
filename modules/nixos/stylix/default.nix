@@ -7,14 +7,14 @@
 
   stylix = {
     enable = true;
-    image = ./../../../../wallpapers/sundown-over-sea.jpg;
+    #image = ./../../../../wallpapers/sundown-over-sea.jpg;
     base16Scheme = ./mytheme.yaml;
     polarity = "dark";
     targets = {
-      waybar.enable = false;
-      kitty.enable = false;
-      rofi.enable = false;
-      neovim.enable = false;
+      #waybar.enable = false;
+      #kitty.enable = false;
+      #rofi.enable = false;
+      #neovim.enable = false;
     };
 
 

@@ -27,8 +27,7 @@
       gcheck = "git checkout";
       gcredential = "git config credential.helper store";
 
-      update-grub = "sudo grub-mkconfig -o /boot/grub/grub.cfg";
-      flake-switch = "sudo nixos-rebuild switch --flake ~/nixos#${hostname}";
+      flake-switch = "cd && sudo nixos-rebuild switch --flake 'path:nixos/#${hostname}'";
       home-switch = "home-manager switch --flake ~/nixos#${hostname}";
       update-flake = "cd ~/nixos && nix flake update && flake-switch";
     };

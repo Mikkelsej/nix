@@ -2,16 +2,16 @@
 
 {
   services = {
-    xserver = {
-      enable = true;
-      displayManager = {
-        autoLogin = {
+    displayManager = {
+      defaultSession = "hyprland";
+      autoLogin = {
           enable = true;
           user = "mikke";
         };
-        
-        defaultSession = "hyprland";
-
+    }
+    xserver = {
+      enable = true;
+      displayManager = {
         lightdm = {
           enable = true;
           greeters.enso = {

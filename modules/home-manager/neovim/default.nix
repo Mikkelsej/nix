@@ -15,5 +15,6 @@
   home.packages = with pkgs; [
     ripgrep # Needed for telescope
     gcc # Needed for telescope
+    tree-sitter
   ];
 }

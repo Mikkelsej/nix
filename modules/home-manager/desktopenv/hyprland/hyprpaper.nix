@@ -2,9 +2,8 @@
 
 {
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/.config/wallpapers/sundown-over-sea.png
-    wallpaper = ,~/.config/wallpapers/sundown-over-sea.png
+    preload = /home/mikke/nixos/wallpapers/sundown-over-sea.jpg
+    wallpaper = ,/home/mikke/nixos/wallpapers/sundown-over-sea.jpg
     splash = false
   '';
-
 }

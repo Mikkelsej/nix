@@ -5,7 +5,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default  # Import Home Manager module
-      ./../../modules/nixos/maintainence.nix      
+      ./../../modules/nixos/maintainence.nix 
+      ./../../modules/nixos/display-managers/lightdm.nix      
     ];
 
 
@@ -36,14 +37,14 @@
             fwsetup
           }
         '';
-        default = "3";
+        default = "0";
         splashImage = null;
         theme = ./../../modules/nixos/grub-themes/Particle-window;
       };
     };
   };
 
-  #networking.hostName = "nixos"; # Define hostname
+  networking.hostName = "nixos"; # Define hostname
   networking.networkmanager.enable = true;  # Enable NetworkManager
 
   # Set the timezone and locale
@@ -108,9 +109,6 @@
   # Link thumbnailers for preview support
   environment.pathsToLink = [ "share/thumbnailers" ];
 
-  # Enable Zsh for user
-  programs.zsh.enable = true;
-
   # Hyprland configuration (Wayland compositor)
   programs.hyprland = {
     enable = true;
@@ -170,8 +168,6 @@
     };
     backupFileExtension = "backup";
   };
-
-  
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -189,44 +185,7 @@
     ];
   };
 
-
-  #services = {
-  #  xserver = {
-  #    enable = true;
-  #    displayManager = {
-  #      lightdm = {
-  #        enable = true;
-  #        greeters.enso = {
-  #          enable = true;
-  #        };
-  #      background = "/etc/sundown-over-sea.jpg";    
-  #      };
-  #    };
-  #  };
-  #};
-
-  services = {
-    displayManager.sddm = {
-      enable = true;
-      theme = "breeze";
-      wayland.enable = true;
-      settings = {
-        Theme = {
-          Background = "/etc/sundown-over-sea.jpg";
-        };
-        General = {
-          Locale = "da_DK.UTF-8";
-          TimeZone = "Europe/Copenhagen";
-          GreeterEnvironment = "TZ=Europe/Copenhagen";   
-          Background = "/etc/sundown-over-sea.jpg";       
-        };
-      };
-    };
-  };
-
-  environment.etc."sundown-over-sea.jpg".source = ./../../wallpapers/sundown-over-sea.jpg;
-
-  stylix.targets.plymouth.enable = false;
+  programs.zsh.enable = true;
 
   # Optional: Enable OpenSSH if needed
   # services.openssh.enable = true;

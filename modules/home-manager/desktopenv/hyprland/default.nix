@@ -56,6 +56,10 @@
     ];
 
 
+    services.swayosd = {
+        enable = true;
+    };
+
     # Enable Dock for hyprland
     programs.nwg-dock-hyprland.enable = true;
 

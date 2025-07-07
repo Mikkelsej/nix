@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-# Wallpaper
-waypaper --wallpaper nixos/wallpapers/sundown-over-sea.jpg & 
-
 # Waybar
 waybar &
 

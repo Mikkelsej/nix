@@ -29,4 +29,9 @@ in
   };
 
   programs.starship.enable = true;
+  
+  home.packages = with pkgs; [
+    eza
+    fastfetch
+  ];
 }

@@ -9,54 +9,28 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
-    # Code Editor
+
     vscode
     jetbrains.idea-ultimate
-
-    waypaper
-    
-    # Notification Daemon
-    swaynotificationcenter
-    # Application Launcher
-    rofi-wayland
-  
-    
-    # Screenshots    
-    grim
-    slurp
-    grimblast
-    # Terminal & more
-    fastfetch
-    eza
-    kitty
-    # Shell 
-    zsh
-    
     discord
     spotify
-    spotify-tray
     obsidian
+
+
+    
 
     gparted
 
-    networkmanagerapplet
-
     mako
     libnotify
-    swayosd
+    
     
     xpad
 
     yazi
-    
-    onedrive
-
-    tree-sitter
   ];
 
-  services.swayosd = {
-    enable = true;
-  };
+  
 
   home.file = {
 

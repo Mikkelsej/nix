@@ -5,4 +5,10 @@
     source = ./screenshot.sh;
     executable = true;
   };
+
+  home.packages = with pkgs; [
+    grim
+    slurp
+    grimblast
+  ];
 }

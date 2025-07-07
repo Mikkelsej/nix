@@ -9,5 +9,6 @@
   # Ensure dependencies are installed
   home.packages = with pkgs; [
     procps # for pgrep
+    onedrive
   ];
 }

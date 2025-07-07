@@ -11,4 +11,8 @@ in
     settings = waybarConfig.settings;
     style = waybarStyle.style;
   };
+
+  home.packages = with pkgs; [
+    swaynotificationcenter
+  ];
 }

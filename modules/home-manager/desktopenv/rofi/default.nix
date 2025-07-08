@@ -4,7 +4,7 @@
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;  
-    theme = "nixos/modules/home-manager/desktopenv/rofi/themes/nord.rasi";  
+    theme = "nix/modules/home-manager/desktopenv/rofi/themes/nord.rasi";  
 
     # Extra Rofi settings
     extraConfig = {

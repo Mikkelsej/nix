@@ -4,8 +4,7 @@ return {
   config = function()
     local config = require("nvim-treesitter.configs")
     config.setup({
-      auroinstall = true,
-      ensure_installed = { "lua", "java", "python", "scala", "c", "bash", "nix"},
+      auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
     })

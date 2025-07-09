@@ -22,8 +22,4 @@
       bw = 0;
     };
   };
-
-  home.packages = with pkgs; [
-    rofi-wayland
-  ];
 }

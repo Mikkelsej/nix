@@ -15,5 +15,6 @@
     ripgrep # Needed for telescope
     gcc # Needed for telescope
     tree-sitter
+    nixd
   ];
 }

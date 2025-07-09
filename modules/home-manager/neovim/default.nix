@@ -9,6 +9,7 @@
   programs.neovim = {
     enable = true;
     extraConfig = "";
+    withNodeJs = true;
   };
 
   home.packages = with pkgs; [
@@ -16,5 +17,6 @@
     gcc # Needed for telescope
     tree-sitter
     nixd
+    black
   ];
 }

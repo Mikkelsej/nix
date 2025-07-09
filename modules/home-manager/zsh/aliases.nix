@@ -27,7 +27,7 @@
 
       switch-flake="sudo nixos-rebuild switch --flake 'path:/home/mikke/nix/#${hostname}'";
 
-      home-switch = "home-manager switch --flake ~/nix#${hostname}";
+      home-switch = "home-manager switch --flake 'path:/home/mikke/nix#mikke'";
       update-flake = "nix flake update --flake 'path:/home/mikke/nix' && switch-flake";
     };
 }

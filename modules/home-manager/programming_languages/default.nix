@@ -13,8 +13,5 @@
       
       # C
       gcc
-
-      # Node.js
-      nodejs-slim
     ];
 }

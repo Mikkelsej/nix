@@ -6,7 +6,7 @@
 
     home.packages = with pkgs; [
       # Python
-      python3Minimal
+      python3Full
 
       # Java
       jdk

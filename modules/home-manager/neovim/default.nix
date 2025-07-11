@@ -18,5 +18,6 @@
     tree-sitter
     nixd
     black
+    lua-language-server
   ];
 }

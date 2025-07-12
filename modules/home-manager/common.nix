@@ -8,4 +8,8 @@
     ./zsh/default.nix
     ./yazi.nix
   ];
+
+  home.packages = with pkgs; [
+    yt-dlp
+  ]
 } 

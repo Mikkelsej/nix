@@ -37,6 +37,7 @@
         hypridle
         hyprlock
         hyprpolkitagent
+        qt6.qtwayland
         hyprpaper
 
         waybar
